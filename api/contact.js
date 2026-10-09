@@ -1,3 +1,4 @@
+try { require('dotenv').config(); } catch (e) {}
 const { Resend } = require('resend');
 
 // In-memory rate limiting map for basic spam mitigation
@@ -132,7 +133,7 @@ module.exports = async function handler(req, res) {
 
     // 5. Validate Environment Variables
     const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_TO_EMAIL || 'hr@civildesignltd.com';
+    const toEmail = process.env.CONTACT_TO_EMAIL || 'sidharthramasamy27@gmail.com';
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'Perpetual Civil Design <onboarding@resend.dev>';
 
     if (!apiKey) {

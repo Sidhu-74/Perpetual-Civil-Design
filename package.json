@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Perpetual Civil Design Website",
   "scripts": {
-    "dev": "npx --yes serve -l 5500 .",
-    "start": "npx --yes serve -l 5500 .",
-    "serve": "npx --yes serve -l 5500 ."
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js"
   },
   "devDependencies": {
     "serve": "^14.2.4"
