@@ -1685,12 +1685,73 @@
       align-self: end
     }
 
-    .cta-mini {
+    .cta-contact-card {
       align-self: end;
       justify-self: start;
-      max-width: 300px;
-      display: grid;
-      gap: 14px
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 22px 28px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: max-content;
+      max-width: 100%;
+    }
+
+    .cta-contact-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .9375rem;
+      font-weight: 500;
+      color: #6b7280;
+      letter-spacing: -.01em;
+      line-height: 1;
+    }
+
+    .cta-contact-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f2571f;
+      flex: none;
+    }
+
+    .cta-contact-detail {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .cta-contact-icon {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      stroke: var(--ink);
+      fill: none;
+      vertical-align: middle;
+    }
+
+    .cta-contact-detail strong {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .cta-contact-link {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color .15s ease, opacity .15s ease;
+    }
+
+    .cta-contact-link:hover {
+      text-decoration: underline;
+      opacity: .85;
     }
 
     /* page hero (inner pages) */
@@ -1754,37 +1815,185 @@
       margin-top: 12px
     }
 
-    /* projects page */
-    .pgrid {
+    /* projects page - 15 projects uniform grid (6-6-3) & pagination */
+    .projects-uniform-grid {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 12px
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 24px;
     }
 
-    .pgrid>* {
-      min-width: 0
-    }
-
-    .pbig {
-      display: grid;
-      grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
-      gap: 8px;
+    .projects-uniform-grid .pcard {
+      height: 100%;
+      min-height: 100%;
+      transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
+      border: 1px solid rgba(0, 0, 0, .05);
       background: var(--card);
       border-radius: var(--r);
-      padding: 8px
-    }
-
-    .pbig .img {
-      border-radius: 14px;
-      --ar: 16/10
-    }
-
-    .pbig-body {
-      padding: clamp(16px, 2vw, 28px);
+      padding: 8px;
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .projects-uniform-grid .pcard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, .08);
+    }
+
+    .projects-uniform-grid .pcard .img {
+      --ar: 16/10;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .projects-uniform-grid .pcard-body {
+      padding: 20px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
       justify-content: space-between;
-      gap: 32px
+      gap: 14px;
+    }
+
+    .projects-uniform-grid .pcard-title-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .projects-uniform-grid .pcard-title-group .t-h4 {
+      font-size: 1.15rem;
+      letter-spacing: -.02em;
+      line-height: 1.35;
+      margin: 0;
+      min-height: 2.7em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .projects-uniform-grid .pcard-meta {
+      min-height: 2.4em;
+    }
+
+    .projects-uniform-grid .pcard .scope {
+      font-size: .875rem;
+      color: var(--ink-2);
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      min-height: 2.9em;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .projects-page {
+      animation: projFadeIn .3s ease forwards;
+    }
+
+    @keyframes projFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .projects-pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .projects-page-info {
+      font-size: .9375rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .projects-page-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .proj-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+
+    .proj-nav-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .proj-nav-btn:hover:not(:disabled) {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .proj-nav-btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .proj-page-nums {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .proj-num-btn {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: inherit;
+    }
+
+    .proj-num-btn:hover:not(.active) {
+      background: var(--chip);
+      border-color: var(--soft);
+    }
+
+    .proj-num-btn.active {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
     }
 
     .kv {
@@ -2332,8 +2541,8 @@
 
     .fc-handwritten {
       font-size: .9375rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, .9);
+      font-weight: 500;
+      color: #fff;
       letter-spacing: -.01em
     }
 
@@ -2347,7 +2556,7 @@
       width: 38px;
       height: 38px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, .07);
+      background: rgba(255, 255, 255, .08);
       border: 1px solid rgba(255, 255, 255, .12);
       display: grid;
       place-items: center;
@@ -2373,22 +2582,22 @@
     /* Right Light Card */
     .foot-card-light {
       background: var(--card);
-      border: 1px solid var(--line);
+      border: 1px solid rgba(0, 0, 0, .04);
       border-radius: 24px;
       padding: clamp(28px, 3.2vw, 44px);
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 48px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, .02)
+      gap: 40px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .03)
     }
 
     /* Navigation Columns */
     .fc-columns-wrap {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px;
+      grid-template-columns: 1.1fr 1.5fr 1.2fr;
+      gap: 36px;
       padding-top: 4px
     }
 
@@ -2439,8 +2648,8 @@
       justify-content: space-between;
       align-items: center;
       gap: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line)
+      padding-top: 12px;
+      border-top: none
     }
 
     .fc-sub-cta {
@@ -2469,20 +2678,22 @@
     /* Giant Watermark */
     .foot-watermark {
       position: relative;
-      margin-top: -28px;
+      margin-top: -36px;
+      margin-bottom: -10px;
       z-index: 1;
       pointer-events: none;
       overflow: hidden;
-      user-select: none
+      user-select: none;
+      text-align: center
     }
 
     .foot-watermark span {
-      display: block;
+      display: inline-block;
       font-size: clamp(5.5rem, 15vw, 13.5rem);
       font-weight: 800;
-      letter-spacing: -.05em;
+      letter-spacing: -.03em;
       line-height: .85;
-      color: rgba(11, 11, 11, .03);
+      color: rgba(11, 11, 11, .035);
       text-transform: uppercase;
       white-space: nowrap
     }
@@ -2494,9 +2705,9 @@
       align-items: center;
       gap: 16px 32px;
       flex-wrap: wrap;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: none;
       font-size: .8125rem;
       color: var(--muted);
       position: relative;
@@ -2505,13 +2716,13 @@
 
     .foot-bottom-bar a {
       color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      text-decoration: none;
       transition: color .2s ease
     }
 
     .foot-bottom-bar a:hover {
-      color: var(--accent)
+      color: var(--accent);
+      text-decoration: underline
     }
 
     .foot-legal-links {
@@ -2636,11 +2847,22 @@
       }
 
       .cta-frame {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .cta-mini {
-        display: none
+      .cta-contact-card {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 22px;
+        border-radius: 20px;
+        white-space: normal;
+      }
+
+      .cta-contact-detail {
+        white-space: normal;
+        flex-wrap: wrap;
       }
 
       .hero-frame-contact {
@@ -2695,12 +2917,9 @@
         grid-column: span 6 !important
       }
 
-      .pgrid>* {
-        grid-column: span 6 !important
-      }
-
-      .pgrid>.full {
-        grid-column: 1/-1 !important
+      .projects-uniform-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
       }
     }
 
@@ -2797,8 +3016,14 @@
         order: -1
       }
 
-      .pgrid>* {
-        grid-column: 1/-1 !important
+      .projects-uniform-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .projects-pagination {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
       }
 
       .form {
@@ -3320,7 +3545,7 @@
       </div>
     </section>
 
-    <section class="wrap sec" aria-labelledby="h-app">
+    <section class="wrap sec" id="how-we-work" aria-labelledby="h-app">
       <div class="shead">
         <span class="dot-label">How we work</span>
         <h2 id="h-app" class="t-h3">A clear route from technical review <span class="grey">to project delivery.</span>
@@ -3509,7 +3734,7 @@
       </div>
     </section>
 
-    <section class="wrap sec" aria-labelledby="h-faq">
+    <section class="wrap sec" id="faq" aria-labelledby="h-faq">
       <div class="shead">
         <span class="dot-label">FAQ</span>
         <h2 id="h-faq" class="t-h2">Questions</h2>
@@ -3564,72 +3789,20 @@
       </div>
     </section>
 
-    <section class="wrap sec" aria-labelledby="h-talk">
-      <div class="talk">
-        <div>
-          <h2 id="h-talk" class="t-h3">Discuss a Project. <span class="grey">UK-wide support.</span></h2>
-          <p class="t-body" style="margin-top:12px">Talk to PCD about specialist engineering support for your next
-            power, energy or infrastructure project.</p>
-          <div class="offices">
-            <div class="office">
-              <div class="line1"><svg>
-                  <use href="#mail" />
-                </svg>hr@civildesignltd.com</div>
-              <h4>Email</h4>
-              <p>Project enquiries</p>
-            </div>
-            <div class="office">
-              <div class="line1"><svg>
-                  <use href="#phone" />
-                </svg>+44 7391544743</div>
-              <h4>Telephone</h4>
-              <p>Project enquiries</p>
-            </div>
-            <div class="office">
-              <div class="line1"><svg>
-                  <use href="#phone" />
-                </svg>+44 7759170640</div>
-              <h4>Telephone</h4>
-              <p>Project enquiries</p>
-            </div>
-            <div class="office">
-              <div class="line1"><svg>
-                  <use href="#pin" />
-                </svg>Derby, England</div>
-              <h4>Office</h4>
-              <p>18 Chestnut Way, Repton, Derby, DE65 6FQ</p>
-            </div>
-          </div>
-        </div>
-        <div class="card biz">
-          <h3 style="font-size:1.125rem;letter-spacing:-.03em">Project enquiry</h3>
-          <dl>
-            <div>
-              <dt>Email</dt>
-              <dd><svg>
-                  <use href="#mail" />
-                </svg>hr@civildesignltd.com</dd>
-            </div>
-            <div>
-              <dt>Coverage</dt>
-              <dd><svg>
-                  <use href="#pin" />
-                </svg>UK-wide support</dd>
-            </div>
-          </dl>
-          <a class="pill" href="#contact" style="justify-content:center">Discuss a Project <svg>
-              <use href="#chev" />
-            </svg></a>
-        </div>
-      </div>
-    </section>
-
     <section class="wrap" style="padding-top:clamp(40px,5vw,64px)" aria-labelledby="h-cta">
       <div class="cta-frame">
         <img src="img/cta.jpg" alt="Transmission pylons and overhead lines against a muted evening sky" loading="lazy">
-        <div class="card cta-mini">
-          <span class="dot-label accent">UK-wide support</span>
-          <p class="t-small">PCD supports projects across the UK.</p>
+        <div class="card cta-contact-card">
+          <div class="cta-contact-tag">
+            <span class="cta-contact-dot" aria-hidden="true"></span>
+            <span>For Contact</span>
+          </div>
+          <div class="cta-contact-detail">
+            <svg class="cta-contact-icon" aria-hidden="true">
+              <use href="#mail" />
+            </svg>
+            <span><strong>Email :</strong> <a href="mailto:hr@civildesignltd.com" class="cta-contact-link">hr@civildesignltd.com</a></span>
+          </div>
         </div>
         <div class="card cta-card">
           <h2 id="h-cta" class="t-h4" style="font-size:clamp(1.5rem,2.2vw,2rem)">Have a project that needs specialist
@@ -3759,7 +3932,7 @@
       </div>
     </section>
 
-    <section class="wrap sec">
+    <section class="wrap sec" id="projects-section">
       <div class="shead">
         <span class="dot-label">Our work</span>
         <h2 class="t-h2">Selected Projects</h2>
@@ -3768,69 +3941,284 @@
         </div>
       </div>
 
-      <div class="pgrid">
-        <article class="pbig zoom full" style="grid-column:1/-1">
-          <div class="img"><img src="img/p01.jpg" alt="Outdoor high-voltage substation with gantries and transformers"
-              loading="lazy"><span class="rep">Representative image</span></div>
-          <div class="pbig-body">
-            <div><span class="idx">/01</span>
-              <h3 class="t-h3" style="margin-top:12px">Landulph 400 kV Substation</h3>
+      <!-- 15 Projects Grid Container (6-6-3 per page) -->
+      <div class="projects-paginated-container">
+
+        <!-- Page 1 (Projects 01-06) -->
+        <div class="projects-page active" data-proj-page="1">
+          <div class="projects-uniform-grid">
+            <!-- 01: Landulph 400 kV -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/p01.jpg" alt="Landulph 400 kV Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/01</span>
+                  <h3 class="t-h4">Landulph 400 kV</h3>
+                  <div class="pcard-meta"><span>Cornwall, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">Civil Engineering &amp; Design Assurance</p>
+              </div>
+            </a>
+
+            <!-- 02: Navenby 400 kV -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/p03.jpg" alt="Navenby 400 kV Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/02</span>
+                  <h3 class="t-h4">Navenby 400 kV</h3>
+                  <div class="pcard-meta"><span>Lincolnshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">Civil Engineering &amp; Design Assurance</p>
+              </div>
+            </a>
+
+            <!-- 03: Bicker Fen -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/card1.jpg" alt="Bicker Fen Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/03</span>
+                  <h3 class="t-h4">Bicker Fen</h3>
+                  <div class="pcard-meta"><span>Lincolnshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400 kV Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 04: West Burton -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/card2.jpg" alt="West Burton Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/04</span>
+                  <h3 class="t-h4">West Burton</h3>
+                  <div class="pcard-meta"><span>Nottinghamshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400 kV Substation Civil Engineering &amp; Foundations</p>
+              </div>
+            </a>
+
+            <!-- 05: Wymondley -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/p04.jpg" alt="Wymondley Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/05</span>
+                  <h3 class="t-h4">Wymondley</h3>
+                  <div class="pcard-meta"><span>Hertfordshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400 kV GIS Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 06: Bulls Lodge 400 kV GIS -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/p02.jpg" alt="Bulls Lodge 400 kV GIS Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/06</span>
+                  <h3 class="t-h4">Bulls Lodge 400 kV GIS</h3>
+                  <div class="pcard-meta"><span>Essex, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">GIS Buildings, Foundations &amp; Design Assurance</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Page 2 (Projects 07-12) -->
+        <div class="projects-page" data-proj-page="2" hidden>
+          <div class="projects-uniform-grid">
+            <!-- 07: Spennymoor -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/position.jpg" alt="Spennymoor Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/07</span>
+                  <h3 class="t-h4">Spennymoor</h3>
+                  <div class="pcard-meta"><span>County Durham, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400 kV Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 08: Cowley 400 kV Bay Extension -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/p05.jpg" alt="Cowley 400 kV Bay Extension" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/08</span>
+                  <h3 class="t-h4">Cowley 400 kV Bay Extension</h3>
+                  <div class="pcard-meta"><span>Oxfordshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">Substation Bay Extension &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 09: Burwell -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/s01.jpg" alt="Burwell Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/09</span>
+                  <h3 class="t-h4">Burwell</h3>
+                  <div class="pcard-meta"><span>Cambridgeshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400/132 kV Substation Civil Engineering &amp; Technical Assurance</p>
+              </div>
+            </a>
+
+            <!-- 10: Wimbledon (LPT2) -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/s03.jpg" alt="Wimbledon Substation (LPT2)" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/10</span>
+                  <h3 class="t-h4">Wimbledon (LPT2)</h3>
+                  <div class="pcard-meta"><span>London, UK</span><span>Power &amp; Energy (LPT2)</span></div>
+                </div>
+                <p class="scope">400 kV Substation Civil Engineering &amp; Shaft Foundations</p>
+              </div>
+            </a>
+
+            <!-- 11: New Cross (LPT2) -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/s02.jpg" alt="New Cross Substation (LPT2)" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/11</span>
+                  <h3 class="t-h4">New Cross (LPT2)</h3>
+                  <div class="pcard-meta"><span>London, UK</span><span>Power &amp; Energy (LPT2)</span></div>
+                </div>
+                <p class="scope">400 kV Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 12: Hurst (LPT2) -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/s04.jpg" alt="Hurst Substation (LPT2)" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/12</span>
+                  <h3 class="t-h4">Hurst (LPT2)</h3>
+                  <div class="pcard-meta"><span>Kent / Southeast London, UK</span><span>Power &amp; Energy (LPT2)</span></div>
+                </div>
+                <p class="scope">Substation Civil Engineering &amp; Technical Assurance</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Page 3 (Projects 13-15) -->
+        <div class="projects-page" data-proj-page="3" hidden>
+          <div class="projects-uniform-grid">
+            <!-- 13: Littlebrook (LPT2) -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/projhero.jpg" alt="Littlebrook Substation (LPT2)" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/13</span>
+                  <h3 class="t-h4">Littlebrook (LPT2)</h3>
+                  <div class="pcard-meta"><span>Kent, UK</span><span>Power &amp; Energy (LPT2)</span></div>
+                </div>
+                <p class="scope">400/132 kV Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+
+            <!-- 14: Minety -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/why.jpg" alt="Minety Battery & Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/14</span>
+                  <h3 class="t-h4">Minety</h3>
+                  <div class="pcard-meta"><span>Wiltshire, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">Major Battery Energy Storage &amp; Substation Civil Engineering</p>
+              </div>
+            </a>
+
+            <!-- 15: Mannington -->
+            <a class="pcard zoom" href="#contact">
+              <div class="img">
+                <img src="img/approach.jpg" alt="Mannington Substation" loading="lazy">
+                <span class="rep">Representative image</span>
+              </div>
+              <div class="pcard-body">
+                <div class="pcard-title-group">
+                  <span class="idx">/15</span>
+                  <h3 class="t-h4">Mannington</h3>
+                  <div class="pcard-meta"><span>Dorset, UK</span><span>Power &amp; Energy</span></div>
+                </div>
+                <p class="scope">400/132 kV Substation Civil &amp; Structural Engineering</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="projects-pagination">
+          <span class="projects-page-info" id="projPageInfo">Showing 1–6 of 15 projects</span>
+          <div class="projects-page-btns">
+            <button type="button" class="proj-nav-btn" id="projPrev" disabled aria-label="Previous projects page">
+              <svg><use href="#chevl" /></svg>
+              <span>Previous</span>
+            </button>
+            <div class="proj-page-nums" id="projPageNums">
+              <button type="button" class="proj-num-btn active" data-page-target="1">1</button>
+              <button type="button" class="proj-num-btn" data-page-target="2">2</button>
+              <button type="button" class="proj-num-btn" data-page-target="3">3</button>
             </div>
-            <dl class="kv">
-              <div>
-                <dt>Location</dt>
-                <dd>Cornwall, UK</dd>
-              </div>
-              <div>
-                <dt>Sector</dt>
-                <dd>Power &amp; Energy</dd>
-              </div>
-              <div>
-                <dt>Scope</dt>
-                <dd>Civil Engineering and Design Assurance</dd>
-              </div>
-            </dl>
+            <button type="button" class="proj-nav-btn" id="projNext" aria-label="Next projects page">
+              <span>Next</span>
+              <svg><use href="#chev" /></svg>
+            </button>
           </div>
-        </article>
-        <a class="pcard zoom" href="#contact" style="grid-column:span 7">
-          <div class="img" style="--ar:16/11"><img src="img/p02.jpg"
-              alt="Power transformer with bushings and cooling pipework" loading="lazy"><span class="rep">Representative
-              image</span></div>
-          <div class="pcard-body"><span class="idx">/02</span>
-            <h3 class="t-h4">Bulls Lodge 400 kV GIS Substation</h3>
-            <div class="pcard-meta"><span>Essex, UK</span><span>Power &amp; Energy</span></div>
-            <p class="scope">GIS Buildings, Foundations and Structural Design Assurance</p>
-          </div>
-        </a>
-        <a class="pcard zoom" href="#contact" style="grid-column:span 5">
-          <div class="img" style="--ar:auto;flex:1;min-height:260px"><img src="img/p03.jpg"
-              alt="Line of transmission towers crossing flat open farmland" loading="lazy"><span
-              class="rep">Representative image</span></div>
-          <div class="pcard-body"><span class="idx">/03</span>
-            <h3 class="t-h4">Navenby 400 kV Substation</h3>
-            <div class="pcard-meta"><span>Lincolnshire, UK</span><span>Power &amp; Energy</span></div>
-            <p class="scope">Civil Engineering and Design Assurance</p>
-          </div>
-        </a>
-        <a class="pcard zoom" href="#contact" style="grid-column:span 5">
-          <div class="img" style="--ar:auto;flex:1;min-height:260px"><img src="img/p04.jpg"
-              alt="Close-up of substation insulators and bushings against blue sky" loading="lazy"><span
-              class="rep">Representative image</span></div>
-          <div class="pcard-body"><span class="idx">/04</span>
-            <h3 class="t-h4">Wymondley Substation</h3>
-            <div class="pcard-meta"><span>Hertfordshire, UK</span><span>Power &amp; Energy</span></div>
-            <p class="scope">GIS Substation Civil and Structural Engineering</p>
-          </div>
-        </a>
-        <a class="pcard zoom" href="#contact" style="grid-column:span 7">
-          <div class="img" style="--ar:16/11"><img src="img/p05.jpg" alt="Black and white view of a substation compound"
-              loading="lazy"><span class="rep">Representative image</span></div>
-          <div class="pcard-body"><span class="idx">/05</span>
-            <h3 class="t-h4">LPT2 Substation Programme</h3>
-            <div class="pcard-meta"><span>London and Southeast England, UK</span><span>Power &amp; Energy</span></div>
-            <p class="scope">400/132 kV Substation Civil and Structural Engineering</p>
-          </div>
-        </a>
+        </div>
+
       </div>
     </section>
 
@@ -3926,64 +4314,6 @@
             </form>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- Office & Direct Contact Section -->
-    <section class="wrap cu-hero-section">
-      <div class="cu-hero-grid">
-        <div class="cu-hero-left">
-          <span class="dot-label">Direct contact</span>
-          <h2 class="cu-hero-title">Office &amp;<br>Enquiries.</h2>
-          <p class="cu-hero-desc">Connect directly with our team for general enquiries, project consulting or office
-            visits.</p>
-        </div>
-
-        <div class="cu-hero-right">
-          <!-- Row 1: Email -->
-          <div class="cu-contact-row">
-            <span class="cu-item-tag">Email</span>
-            <div class="cu-item-main">
-              <span id="c-email" class="cu-item-val">hr@civildesignltd.com</span>
-              <button type="button" class="cu-copy-btn" data-copy="c-email" aria-label="Copy email address">
-                <span class="copy-label">Copy</span>
-                <svg>
-                  <use href="#copy" />
-                </svg>
-              </button>
-            </div>
-            <span class="cu-item-sub">Project enquiries and privacy contact</span>
-          </div>
-
-          <!-- Row 2: Telephone -->
-          <div class="cu-contact-row">
-            <span class="cu-item-tag">Telephone</span>
-            <div class="cu-item-main">
-              <span id="c-t1" class="cu-item-val">+44 7391544743</span>
-              <button type="button" class="cu-copy-btn" data-copy="c-t1" aria-label="Copy phone number">
-                <span class="copy-label">Copy</span>
-                <svg>
-                  <use href="#copy" />
-                </svg>
-              </button>
-            </div>
-            <span class="cu-item-sub">Direct telephone support</span>
-          </div>
-
-          <!-- Row 3: Office -->
-          <div class="cu-contact-row">
-            <span class="cu-item-tag">Office</span>
-            <div class="cu-item-main">
-              <span id="c-addr" class="cu-item-val">18 Chestnut Way, Repton, Derby,<br>England, DE65 6FQ</span>
-              <button type="button" class="cu-copy-btn" data-copy="c-addr" aria-label="Copy office address">
-                <span class="copy-label">Copy</span>
-                <svg>
-                  <use href="#copy" />
-                </svg>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -4095,7 +4425,7 @@
                       d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.5a1.63 1.63 0 0 0-1.63 1.63c0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63z" />
                   </svg>
                 </a>
-                <a href="#contact" class="fc-soc-btn" aria-label="Derby Office" title="18 Chestnut Way, Repton, Derby">
+                <a href="#contact" class="fc-soc-btn" aria-label="Derby Office" title="Office">
                   <svg>
                     <use href="#pin" />
                   </svg>
@@ -4116,8 +4446,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Our Services</a></li>
                 <li><a href="#projects">Selected Projects</a></li>
-                <li><a href="#home">How We Work</a></li>
-                <li><a href="#home">Questions &amp; FAQ</a></li>
+                <li><a href="#how-we-work">How We Work</a></li>
+                <li><a href="#faq">Questions &amp; FAQ</a></li>
               </ul>
             </div>
 
@@ -4136,9 +4466,6 @@
               <span class="fc-col-title">Office &amp; Contact</span>
               <ul class="fc-links">
                 <li><a href="mailto:hr@civildesignltd.com">hr@civildesignltd.com</a></li>
-                <li><a href="tel:+447391544743">+44 7391544743</a></li>
-                <li><a href="tel:+447759170640">+44 7759170640</a></li>
-                <li><span class="fc-static-text">18 Chestnut Way, Repton, Derby, UK</span></li>
               </ul>
             </div>
           </div>
@@ -4165,8 +4492,7 @@
 
       <!-- Bottom Bar with Corner Links -->
       <div class="foot-bottom-bar">
-        <span>© <span id="yr">2026</span> Perpetual Civil Design Limited. 18 Chestnut Way, Repton, Derby, DE65
-          6FQ</span>
+        <span>© <span id="yr">2026</span> Perpetual Civil Design Limited.</span>
         <div class="foot-legal-links">
           <a href="#privacy">Privacy Policy</a>
           <span>·</span>
@@ -4406,6 +4732,63 @@
         });
 
         startHrwTimer();
+      }
+
+      /* Projects page client-side pagination (15 projects, 6-6-3 structure across 3 pages) */
+      var projPages = document.querySelectorAll('.projects-page'),
+        projPrevBtn = document.getElementById('projPrev'),
+        projNextBtn = document.getElementById('projNext'),
+        projNumBtns = document.querySelectorAll('.proj-num-btn'),
+        projPageInfo = document.getElementById('projPageInfo');
+      var currentProjPage = 1, totalProjPages = 3;
+
+      function setProjPage(page, shouldScroll) {
+        if (page < 1) page = 1;
+        if (page > totalProjPages) page = totalProjPages;
+        currentProjPage = page;
+
+        projPages.forEach(function (p) {
+          var isCurrent = parseInt(p.getAttribute('data-proj-page'), 10) === page;
+          p.hidden = !isCurrent;
+          p.classList.toggle('active', isCurrent);
+        });
+
+        projNumBtns.forEach(function (btn) {
+          var targetPage = parseInt(btn.getAttribute('data-page-target'), 10);
+          btn.classList.toggle('active', targetPage === page);
+        });
+
+        if (projPrevBtn) projPrevBtn.disabled = (page === 1);
+        if (projNextBtn) projNextBtn.disabled = (page === totalProjPages);
+
+        if (projPageInfo) {
+          var ranges = { 1: 'Showing 1–6 of 15 projects', 2: 'Showing 7–12 of 15 projects', 3: 'Showing 13–15 of 15 projects' };
+          projPageInfo.textContent = ranges[page] || ('Page ' + page + ' of ' + totalProjPages);
+        }
+
+        if (shouldScroll) {
+          var sec = document.getElementById('projects-section');
+          if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      if (projPages.length) {
+        if (projPrevBtn) {
+          projPrevBtn.addEventListener('click', function () {
+            setProjPage(currentProjPage - 1, true);
+          });
+        }
+        if (projNextBtn) {
+          projNextBtn.addEventListener('click', function () {
+            setProjPage(currentProjPage + 1, true);
+          });
+        }
+        projNumBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var target = parseInt(btn.getAttribute('data-page-target'), 10);
+            setProjPage(target, true);
+          });
+        });
       }
 
       var yrEl = document.getElementById('yr');
