@@ -52,6 +52,14 @@
       display: none !important
     }
   </style>
+  <script>
+    (function () {
+      var h = (location.hash || '').slice(1);
+      if (h === 'privacy' || h === 'cookies') {
+        document.documentElement.classList.add('theme-dark-logo');
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -351,6 +359,36 @@
       max-width: 320px;
       object-fit: contain;
       display: block
+    }
+
+    .logo-img-dark {
+      display: none !important;
+    }
+
+    .logo-img-light {
+      display: block !important;
+    }
+
+    .theme-dark-logo .logo-img-light {
+      display: none !important;
+    }
+
+    .theme-dark-logo .logo-img-dark {
+      display: block !important;
+    }
+
+    .theme-dark-logo .burger span {
+      background: var(--ink) !important;
+    }
+
+    .theme-dark-logo .head-end .pill.white {
+      background: var(--ink);
+      color: #fff;
+      border: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .theme-dark-logo .head-end .pill.white:hover {
+      background: #242424;
     }
 
     .nav {
@@ -3214,8 +3252,10 @@
   <!-- ================= HEADER ================= -->
   <header class="head">
     <div class="wrap head-row">
-      <a class="logo" href="#home" aria-label="Perpetual Civil Design, home"><img src="img/logo-full-light.png"
-          alt="Perpetual Civil Design Ltd" class="logo-img"></a>
+      <a class="logo" href="#home" aria-label="Perpetual Civil Design, home">
+        <img src="img/logo-full-light.png" alt="Perpetual Civil Design Ltd" class="logo-img logo-img-light" id="siteLogoLight">
+        <img src="img/logo-full-trans.png" alt="Perpetual Civil Design Ltd" class="logo-img logo-img-dark" id="siteLogoDark">
+      </a>
       <nav class="nav" aria-label="Primary">
         <a href="#home" data-nav="home">Home</a>
         <a href="#services" data-nav="services">Services</a>
@@ -4321,10 +4361,13 @@
 
   <!-- ================= PRIVACY ================= -->
   <main data-page="privacy" hidden>
-    <section class="wrap" style="padding-top:clamp(40px,6vw,88px)">
+    <section class="wrap" style="padding-top:clamp(96px,10vw,130px);padding-bottom:clamp(40px,6vw,80px)">
       <div class="card legal" style="padding:clamp(24px,4vw,56px)">
-        <span class="dot-label">Legal</span>
-        <h1 class="t-h2" style="margin-top:16px">Privacy Policy</h1>
+        <div class="legal-brand" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:16px">
+          <img src="img/logo-full-trans.png" alt="Perpetual Civil Design Ltd" style="height:44px;width:auto;max-width:280px;object-fit:contain;display:block">
+          <span class="dot-label">Legal</span>
+        </div>
+        <h1 class="t-h2">Privacy Policy</h1>
         <p style="font-size:1.0625rem">Perpetual Civil Design Limited respects your privacy and is committed to
           protecting personal information provided through this website.</p>
         <h2>Information you provide</h2>
@@ -4363,10 +4406,13 @@
 
   <!-- ================= COOKIES ================= -->
   <main data-page="cookies" hidden>
-    <section class="wrap" style="padding-top:clamp(40px,6vw,88px)">
+    <section class="wrap" style="padding-top:clamp(96px,10vw,130px);padding-bottom:clamp(40px,6vw,80px)">
       <div class="card legal" style="padding:clamp(24px,4vw,56px)">
-        <span class="dot-label">Legal</span>
-        <h1 class="t-h2" style="margin-top:16px">Cookie Policy</h1>
+        <div class="legal-brand" style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:16px">
+          <img src="img/logo-full-trans.png" alt="Perpetual Civil Design Ltd" style="height:44px;width:auto;max-width:280px;object-fit:contain;display:block">
+          <span class="dot-label">Legal</span>
+        </div>
+        <h1 class="t-h2">Cookie Policy</h1>
         <p style="font-size:1.0625rem">This website may use cookies or similar technologies to support website
           functionality, security, performance and user experience.</p>
         <h2>What cookies are</h2>
@@ -4512,6 +4558,10 @@
       function route() {
         var hash = (location.hash || '').slice(1);
         var pageKey = hash;
+
+        var isLegal = (pageKey === 'privacy' || pageKey === 'cookies');
+        document.documentElement.classList.toggle('theme-dark-logo', isLegal);
+        document.body.classList.toggle('theme-dark-logo', isLegal);
 
         if (titles[pageKey]) {
           mains.forEach(function (m) {
