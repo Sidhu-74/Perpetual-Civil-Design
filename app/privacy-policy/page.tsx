@@ -1,93 +1,423 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Perpetual Civil Design Ltd',
+  title: 'Website Privacy Policy | Perpetual Civil Design Limited',
   description:
-    'Privacy Policy for Perpetual Civil Design Ltd. Details how enquiries and information submitted through the website are handled.',
+    'Website Privacy Policy for Perpetual Civil Design Limited. Explains what information we collect, how we use it, sharing, storage, retention, and your rights under UK GDPR.',
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <main data-page="privacy">
+    <main data-page="privacy" className="min-h-screen bg-[#F7F7F7]">
       <section
         className="wrap"
-        style={{ paddingTop: 'clamp(96px, 10vw, 130px)', paddingBottom: 'clamp(40px, 6vw, 80px)' }}
+        style={{
+          paddingTop: 'clamp(96px, 10vw, 130px)',
+          paddingBottom: 'clamp(48px, 6vw, 96px)',
+          maxWidth: '1000px',
+        }}
       >
-        <div className="card legal" style={{ padding: 'clamp(24px, 4vw, 56px)' }}>
+        {/* Back Link */}
+        <div style={{ marginBottom: '24px' }}>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-[#0B0B0B] transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10 3L5 8l5 5" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+
+        {/* Legal Document Card */}
+        <div
+          className="card"
+          style={{
+            background: '#FFFFFF',
+            borderRadius: '20px',
+            border: '1px solid #E6E6E6',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.03)',
+            padding: 'clamp(28px, 5vw, 64px)',
+          }}
+        >
+          {/* Header Brand Bar */}
           <div
-            className="legal-brand"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottom: '1px solid var(--line)',
-              paddingBottom: '20px',
-              marginBottom: '28px',
+              borderBottom: '1px solid #E6E6E6',
+              paddingBottom: '24px',
+              marginBottom: '32px',
               flexWrap: 'wrap',
               gap: '16px',
             }}
           >
-            <img
-              src="/img/logo-full-trans.png"
-              alt="Perpetual Civil Design Ltd"
+            <Link href="/" aria-label="Perpetual Civil Design Home">
+              <img
+                src="/img/logo-full-trans.png"
+                alt="Perpetual Civil Design Limited"
+                style={{
+                  height: '42px',
+                  width: 'auto',
+                  maxWidth: '260px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
+              />
+            </Link>
+            <span
               style={{
-                height: '44px',
-                width: 'auto',
-                maxWidth: '280px',
-                objectFit: 'contain',
-                display: 'block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '0.8125rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                color: '#707070',
+                background: '#F2F2F2',
+                padding: '6px 14px',
+                borderRadius: '50px',
               }}
-            />
-            <span className="dot-label">Legal</span>
+            >
+              <span
+                style={{
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: '#F26B1D',
+                }}
+              />
+              Official Legal Policy
+            </span>
           </div>
-          <h1 className="t-h2">Privacy Policy</h1>
-          <p style={{ fontSize: '1.0625rem' }}>
-            Perpetual Civil Design Limited respects your privacy and is committed to protecting personal
-            information provided through this website.
-          </p>
-          <h2>Information you provide</h2>
-          <p>Information voluntarily submitted through contact forms may include:</p>
-          <ul>
-            <li>Name</li>
-            <li>Company</li>
-            <li>Email address</li>
-            <li>Telephone number</li>
-            <li>Project or enquiry information</li>
-            <li>Additional message information</li>
-          </ul>
-          <h2>How information is used</h2>
-          <p>Information may be used to:</p>
-          <ul>
-            <li>Respond to enquiries</li>
-            <li>Discuss project requirements</li>
-            <li>Provide requested information</li>
-            <li>Maintain communication relating to an enquiry</li>
-          </ul>
-          <h2>Sharing</h2>
-          <p>Personal information is never sold or shared for unrelated marketing purposes.</p>
-          <p>
-            Where trusted service providers are used to operate the website or process enquiries,
-            information is handled strictly under confidentiality obligations.
-          </p>
-          <h2>Retention</h2>
-          <p>
-            Information is only retained as reasonably necessary for business communications and in
-            accordance with statutory UK legal and professional requirements.
-          </p>
-          <h2>Your rights</h2>
-          <p>
-            Under UK GDPR and applicable data protection law, you have rights relating to access,
-            rectification, erasure, restriction, and portability of your personal data.
-          </p>
-          <h2>Privacy contact</h2>
-          <p>
-            If you have questions regarding this policy or your personal data, contact us at{' '}
-            <a href="mailto:hr@civildesignltd.com" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
-              hr@civildesignltd.com
-            </a>
-            .
-          </p>
+
+          {/* Title & Metadata */}
+          <div style={{ marginBottom: '32px' }}>
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 1.15,
+                color: '#0B0B0B',
+                marginBottom: '8px',
+              }}
+            >
+              Website Privacy Policy
+            </h1>
+            <p style={{ fontSize: '0.9375rem', color: '#707070', fontWeight: 500 }}>
+              Last updated: 19 October 2026
+            </p>
+          </div>
+
+          <div
+            style={{
+              fontSize: '1rem',
+              lineHeight: 1.7,
+              color: '#3A3A3A',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px',
+            }}
+          >
+            {/* Who we are */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                Who we are
+              </h2>
+              <p style={{ marginBottom: '12px' }}>
+                Perpetual Civil Design Limited (&quot;PCD&quot;, &quot;we&quot;, &quot;us&quot;) is a civil and structural engineering consultancy registered in England and Wales, company number 16070828, with its registered office at 18 Chestnut Way, Repton, Derby, DE65 6FQ. We are the controller of any personal data collected through{' '}
+                <a
+                  href="https://www.civildesignltd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#F26B1D', textDecoration: 'underline' }}
+                >
+                  www.civildesignltd.com
+                </a>
+                .
+              </p>
+              <p>
+                Questions about this policy or your data can be sent to{' '}
+                <a
+                  href="mailto:hr@civildesignltd.com"
+                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  hr@civildesignltd.com
+                </a>{' '}
+                or by post to the address above.
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* What information we collect */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                What information we collect
+              </h2>
+              <p style={{ marginBottom: '12px' }}>
+                Our website does not ask you to create an account or make payments. We collect only a small amount of information:
+              </p>
+              <ul style={{ listStyle: 'disc', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+                <li>
+                  <strong style={{ color: '#0B0B0B' }}>Enquiry form</strong> – if you use the form on our Contact page, we collect your name, email address, phone number, company name and the details of your project or question.
+                </li>
+                <li>
+                  <strong style={{ color: '#0B0B0B' }}>Information you send us directly</strong> – if you email us or call us on the numbers shown on the site, we receive your contact details and anything you include in your message.
+                </li>
+                <li>
+                  <strong style={{ color: '#0B0B0B' }}>Technical data</strong> – your IP address, browser type, device and the pages you visit, recorded automatically by our website host in server logs.
+                </li>
+              </ul>
+              <p>
+                We do not knowingly collect information from children, and we do not collect special category data (such as health information).
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* Cookies */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                Cookies
+              </h2>
+              <p style={{ marginBottom: '12px' }}>
+                Our website uses only essential cookies needed for the site to load and work securely. These do not need your consent and do not track you across other websites. Full details are in our{' '}
+                <Link
+                  href="/cookie-policy"
+                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  Cookie Policy
+                </Link>
+                .
+              </p>
+              <p>
+                We do not use analytics, advertising or social media tracking cookies. If we add any in future, we will ask for your consent first through a cookie banner and update this policy.
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* How we use your information */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                How we use your information
+              </h2>
+              <p style={{ marginBottom: '16px' }}>
+                We use your information only for the purposes below, each with a lawful basis under UK GDPR.
+              </p>
+
+              {/* Responsive Table */}
+              <div style={{ overflowX: 'auto', marginBottom: '16px', borderRadius: '12px', border: '1px solid #E6E6E6' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9375rem' }}>
+                  <thead>
+                    <tr style={{ background: '#0B0B0B', color: '#FFFFFF' }}>
+                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '32%' }}>Purpose</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '32%' }}>Information used</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '36%' }}>Lawful basis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FFFFFF' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                        Running and securing the website
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Technical data
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Legitimate interests – keeping the site working and safe
+                      </td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FAFAFA' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                        Replying to enquiries and quotes
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Contact details, message
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Legitimate interests, or steps before entering a contract
+                      </td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FFFFFF' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                        Delivering services you engage us for
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Contact and project details
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Contract
+                      </td>
+                    </tr>
+                    <tr style={{ background: '#FAFAFA' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                        Keeping business records
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Correspondence
+                      </td>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                        Legal obligation
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                We do not use your information for marketing unless you have agreed to it, and we never sell it.
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* Sharing, storage and security */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                Sharing, storage and security
+              </h2>
+              <p style={{ marginBottom: '12px' }}>
+                We share information only with service providers who help us run the business, such as GoDaddy, which hosts our website and provides our email service. Enquiries submitted through our contact form are sent to{' '}
+                <a
+                  href="mailto:hr@civildesignltd.com"
+                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  hr@civildesignltd.com
+                </a>
+                . Our service providers may process your information only on our instructions. We may also disclose information where the law requires it.
+              </p>
+              <p style={{ marginBottom: '12px' }}>
+                Some providers may store data outside the UK. Where they do, we rely on safeguards approved under UK law, such as adequacy regulations or the International Data Transfer Agreement.
+              </p>
+              <p>
+                We keep enquiry emails for up to 2 years and client project records for 6 years after the project ends, to meet legal and insurance requirements. Server logs are kept by our host for a limited period in line with its own policies. We use reasonable technical and organisational measures to protect your information.
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* Your rights */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                Your rights
+              </h2>
+              <p style={{ marginBottom: '12px' }}>
+                Under UK data protection law you have the right to:
+              </p>
+              <ul style={{ listStyle: 'disc', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+                <li>access the personal data we hold about you</li>
+                <li>have inaccurate data corrected</li>
+                <li>have your data erased</li>
+                <li>restrict or object to how we use it</li>
+                <li>receive your data in a portable format</li>
+              </ul>
+              <p style={{ marginBottom: '12px' }}>
+                To use any of these rights, contact us at{' '}
+                <a
+                  href="mailto:hr@civildesignltd.com"
+                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                >
+                  hr@civildesignltd.com
+                </a>
+                . We will respond within one month and there is normally no charge.
+              </p>
+              <p>
+                If you are unhappy with how we handle your data, please tell us first. You also have the right to complain to the Information Commissioner&apos;s Office (ICO) at{' '}
+                <a
+                  href="https://ico.org.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#F26B1D', textDecoration: 'underline' }}
+                >
+                  ico.org.uk
+                </a>{' '}
+                or on{' '}
+                <a
+                  href="tel:03031231113"
+                  style={{ color: '#F26B1D', textDecoration: 'underline' }}
+                >
+                  0303 123 1113
+                </a>
+                .
+              </p>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+
+            {/* Changes to this policy */}
+            <div>
+              <h2
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  color: '#0B0B0B',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '10px',
+                }}
+              >
+                Changes to this policy
+              </h2>
+              <p>
+                We may update this policy from time to time. The latest version will always be on this page, with the date it was last updated at the top.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
