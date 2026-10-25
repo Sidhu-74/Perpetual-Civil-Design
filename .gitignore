@@ -9,3 +9,6 @@ out/
 build/
 scratch/
 *.tsbuildinfo
+.open-next/
+.wrangler/
+.dev.vars

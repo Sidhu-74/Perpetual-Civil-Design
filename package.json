@@ -1,18 +1,23 @@
 {
-  "name": "pcd-final-design",
+  "name": "perpetual-civil-design",
   "version": "1.0.0",
   "description": "Perpetual Civil Design Website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:worker": "opennextjs-cloudflare build",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "next lint"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.13",
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.152.0"
   },
   "dependencies": {
     "@vercel/speed-insights": "^2.0.0",
