@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
         <div style={{ marginBottom: '24px' }}>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-[#0B0B0B] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-[#0B0B0B] transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M10 3L5 8l5 5" />
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
           style={{
             background: '#FFFFFF',
             borderRadius: '20px',
-            border: '1px solid #E6E6E6',
+            border: '1px solid var(--line)',
             boxShadow: '0 4px 24px rgba(0,0,0,0.03)',
             padding: 'clamp(28px, 5vw, 64px)',
           }}
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottom: '1px solid #E6E6E6',
+              borderBottom: '1px solid var(--line)',
               paddingBottom: '24px',
               marginBottom: '32px',
               flexWrap: 'wrap',
@@ -75,10 +75,7 @@ export default function PrivacyPolicyPage() {
                 alignItems: 'center',
                 gap: '8px',
                 fontSize: '0.8125rem',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                color: '#707070',
+                fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)',
                 background: '#F2F2F2',
                 padding: '6px 14px',
                 borderRadius: '50px',
@@ -100,26 +97,20 @@ export default function PrivacyPolicyPage() {
           <div style={{ marginBottom: '32px' }}>
             <h1
               style={{
-                fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
-                lineHeight: 1.15,
-                color: '#0B0B0B',
+                fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)', fontWeight: 400, letterSpacing: '-0.035em', lineHeight: 1.14, color: 'var(--ink)',
                 marginBottom: '8px',
               }}
             >
               Website Privacy Policy
             </h1>
-            <p style={{ fontSize: '0.9375rem', color: '#707070', fontWeight: 500 }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', fontWeight: 400 }}>
               Last updated: 19 October 2026
             </p>
           </div>
 
           <div
             style={{
-              fontSize: '1rem',
-              lineHeight: 1.7,
-              color: '#3A3A3A',
+              fontSize: '1rem', lineHeight: 1.65, color: 'var(--ink-2)',
               display: 'flex',
               flexDirection: 'column',
               gap: '24px',
@@ -129,10 +120,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -154,7 +142,7 @@ export default function PrivacyPolicyPage() {
                 Questions about this policy or your data can be sent to{' '}
                 <a
                   href="mailto:hr@civildesignltd.com"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   hr@civildesignltd.com
                 </a>{' '}
@@ -162,16 +150,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* What information we collect */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -182,13 +167,13 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul style={{ listStyle: 'disc', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
                 <li>
-                  <strong style={{ color: '#0B0B0B' }}>Enquiry form</strong> – if you use the form on our Contact page, we collect your name, email address, phone number, company name and the details of your project or question.
+                  <strong style={{ color: 'var(--ink)' }}>Enquiry form</strong> – if you use the form on our Contact page, we collect your name, email address, phone number, company name and the details of your project or question.
                 </li>
                 <li>
-                  <strong style={{ color: '#0B0B0B' }}>Information you send us directly</strong> – if you email us or call us on the numbers shown on the site, we receive your contact details and anything you include in your message.
+                  <strong style={{ color: 'var(--ink)' }}>Information you send us directly</strong> – if you email us or call us on the numbers shown on the site, we receive your contact details and anything you include in your message.
                 </li>
                 <li>
-                  <strong style={{ color: '#0B0B0B' }}>Technical data</strong> – your IP address, browser type, device and the pages you visit, recorded automatically by our website host in server logs.
+                  <strong style={{ color: 'var(--ink)' }}>Technical data</strong> – your IP address, browser type, device and the pages you visit, recorded automatically by our website host in server logs.
                 </li>
               </ul>
               <p>
@@ -196,16 +181,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Cookies */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -215,7 +197,7 @@ export default function PrivacyPolicyPage() {
                 Our website uses only essential cookies needed for the site to load and work securely. These do not need your consent and do not track you across other websites. Full details are in our{' '}
                 <Link
                   href="/cookie-policy"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   Cookie Policy
                 </Link>
@@ -226,16 +208,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* How we use your information */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -246,57 +225,57 @@ export default function PrivacyPolicyPage() {
               </p>
 
               {/* Responsive Table */}
-              <div style={{ overflowX: 'auto', marginBottom: '16px', borderRadius: '12px', border: '1px solid #E6E6E6' }}>
+              <div style={{ overflowX: 'auto', marginBottom: '16px', borderRadius: '12px', border: '1px solid var(--line)' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9375rem' }}>
                   <thead>
-                    <tr style={{ background: '#0B0B0B', color: '#FFFFFF' }}>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '32%' }}>Purpose</th>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '32%' }}>Information used</th>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '36%' }}>Lawful basis</th>
+                    <tr style={{ background: 'var(--ink)', color: '#FFFFFF' }}>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '32%' }}>Purpose</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '32%' }}>Information used</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '36%' }}>Lawful basis</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FFFFFF' }}>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                    <tr style={{ borderBottom: '1px solid var(--line)', background: '#FFFFFF' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: 'var(--ink)' }}>
                         Running and securing the website
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Technical data
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Legitimate interests – keeping the site working and safe
                       </td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FAFAFA' }}>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                    <tr style={{ borderBottom: '1px solid var(--line)', background: '#FAFAFA' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: 'var(--ink)' }}>
                         Replying to enquiries and quotes
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Contact details, message
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Legitimate interests, or steps before entering a contract
                       </td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #E6E6E6', background: '#FFFFFF' }}>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                    <tr style={{ borderBottom: '1px solid var(--line)', background: '#FFFFFF' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: 'var(--ink)' }}>
                         Delivering services you engage us for
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Contact and project details
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Contract
                       </td>
                     </tr>
                     <tr style={{ background: '#FAFAFA' }}>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: 'var(--ink)' }}>
                         Keeping business records
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Correspondence
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Legal obligation
                       </td>
                     </tr>
@@ -309,16 +288,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Sharing, storage and security */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -328,7 +304,7 @@ export default function PrivacyPolicyPage() {
                 We share information only with service providers who help us run the business, such as GoDaddy, which hosts our website and provides our email service. Enquiries submitted through our contact form are sent to{' '}
                 <a
                   href="mailto:hr@civildesignltd.com"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   hr@civildesignltd.com
                 </a>
@@ -342,16 +318,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Your rights */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -371,7 +344,7 @@ export default function PrivacyPolicyPage() {
                 To use any of these rights, contact us at{' '}
                 <a
                   href="mailto:hr@civildesignltd.com"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   hr@civildesignltd.com
                 </a>
@@ -398,16 +371,13 @@ export default function PrivacyPolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Changes to this policy */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >

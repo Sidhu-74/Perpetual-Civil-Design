@@ -1,28 +1,77 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+
+const clientReviews = [
+  {
+    id: 1,
+    name: 'Karan Patel',
+    role: 'Project Director · Major Transmission EPC',
+    avatar: '/img/rev-01.jpg',
+    text: "PCD delivered civil and structural engineering for our GIS substation with buildability front and centre. Their site-aware reviews resolved interface clashes before construction, keeping our programme on track through to final sign-off.",
+  },
+  {
+    id: 2,
+    name: 'Catherine Hughes',
+    role: 'Head of Engineering · National Power Alliance',
+    avatar: '/img/rev-02.jpg',
+    text: 'Finding specialist partners who understand primary HV plant layouts and secondary Protection and Control systems is rare. PCD integrated seamlessly alongside our team, resolving technical comments quickly and securing approvals without delays.',
+  },
+  {
+    id: 3,
+    name: 'Peter Henderson',
+    role: 'Delivery Lead · Substation Infrastructure Consortium',
+    avatar: '/img/rev-03.jpg',
+    text: 'The temporary works engineering delivered for transformer crane platforms and deep excavation support was exceptional. PCD provided safe, pragmatic solutions specifically tailored to live substation site restrictions and tight grid outage windows.',
+  },
+  {
+    id: 4,
+    name: 'David Vance',
+    role: 'Senior Technical Manager · Grid EPC Contractor',
+    avatar: '/img/rev-04.jpg',
+    text: 'PCD’s design assurance comments are actionable, rigorous and clear. Their thorough technical reviews helped our EPC consortium navigate complex asset owner standards smoothly, avoiding costly on-site revisions and keeping the programme moving.',
+  },
+  {
+    id: 5,
+    name: 'Sarah Lin',
+    role: 'Transmission Package Manager · Clean Energy Grid Alliance',
+    avatar: '/img/rev-05.jpg',
+    text: 'PCD supported our transmission scheme across civil layouts, primary plant coordination and cable trench designs. Their engineers demonstrated consistent technical rigor, fast response times and dependable support through every phase of delivery.',
+  },
+  {
+    id: 6,
+    name: 'Alistair Robertson',
+    role: 'Chief Construction Engineer · High-Voltage Projects',
+    avatar: '/img/rev-06.jpg',
+    text: 'From heavy transformer foundation checks to switchgear building interfaces, PCD’s practical understanding of construction sequencing made a demanding live substation project safe, compliant and straightforward to deliver within our allocated grid outage.',
+  },
+];
 
 export default function HomePage() {
   const [openAcc, setOpenAcc] = useState<number | null>(0);
-  const railRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const scrollRail = (direction: 'prev' | 'next') => {
-    if (!railRef.current) return;
-    const scrollAmount = railRef.current.clientWidth * 0.75;
-    railRef.current.scrollBy({
-      left: direction === 'next' ? scrollAmount : -scrollAmount,
-      behavior: 'smooth',
-    });
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % clientReviews.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const prevReview = () => {
+    setCurrentReview((prev) => (prev - 1 + clientReviews.length) % clientReviews.length);
   };
 
-  const handleRailScroll = () => {
-    if (!railRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = railRef.current;
-    setCanScrollLeft(scrollLeft > 10);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+  const nextReview = () => {
+    setCurrentReview((prev) => (prev + 1) % clientReviews.length);
+  };
+
+  const toggleFlip = (id: number) => {
+    setFlippedCard(flippedCard === id ? null : id);
   };
 
   const toggleAcc = (index: number) => {
@@ -36,7 +85,7 @@ export default function HomePage() {
         <div className="hero-frame hero-frame-center">
           <img
             src="/img/hero.jpg"
-            alt="Engineering expertise for critical power infrastructure"
+            alt="Specialist engineering services for UK substations"
             fetchPriority="high"
             decoding="async"
             width={1024}
@@ -44,11 +93,10 @@ export default function HomePage() {
           />
           <div className="hero-center-content">
             <h1 id="h-hero" className="hero-center-title">
-              Engineering expertise<br />for critical power infrastructure
+              Specialist engineering services<br />for UK substations
             </h1>
             <p className="hero-center-sub">
-              Specialist civil, structural, and Protection &amp; Control engineering<br />for major
-              UK power and infrastructure projects.
+              Expertise in Civil, structural, primary and secondary (Protection &amp; Control) engineering<br />for 400 kV, GIS and 132 kV substation projects across the UK.
             </p>
             <Link className="hero-center-cta" href="/contact">
               <span>Discuss a Project</span>
@@ -62,16 +110,207 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ================= OUR WORKS ================= */}
+      <section className="wrap sec" aria-labelledby="h-work">
+        <div className="shead">
+          <h2 id="h-work" className="t-h2">Our Works</h2>
+          <div className="aside">
+            <Link className="pill" href="/projects">
+              View All Projects{' '}
+              <svg>
+                <use href="#chev" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+        <p className="t-body" style={{ margin: '-24px 0 32px' }}>
+          Substation experience across the UK. A selection of 400 kV, GIS and 400/132 kV substation projects delivered with major contractors and asset owners.
+        </p>
+        <div className="projects-uniform-grid">
+          {/* Card 01: Landulph 400 kV */}
+          <div
+            className={`flip-card ${flippedCard === 1 ? 'is-flipped' : ''}`}
+            onClick={() => toggleFlip(1)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlip(1);
+              }
+            }}
+            tabIndex={0}
+            role="region"
+            aria-label="Landulph 400 kV Substation project card"
+          >
+            <div className="flip-card-inner">
+              {/* FRONT */}
+              <div className="flip-card-front">
+                <div className="img">
+                  <img
+                    src="/img/p01.jpg"
+                    alt="Outdoor high-voltage substation with gantries and transformers"
+                    loading="lazy"
+                  />
+                  <span className="rep">Representative image</span>
+                </div>
+                <div className="pcard-front-body">
+                  <div className="pcard-front-top">
+                    <span className="pcard-idx">/01</span>
+                    <span className="pcard-loc">Cornwall, UK</span>
+                  </div>
+                  <div className="pcard-front-main">
+                    <h3 className="t-h4 pcard-front-title">Landulph 400 kV Substation</h3>
+                    <span className="pcard-sector">Power &amp; Energy</span>
+                  </div>
+                  <div className="pcard-front-scope">
+                    <span className="pcard-scope-label">Scope</span>
+                    <p className="pcard-scope-text">Lead Engineering: Civil, Structural &amp; Design Assurance</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="flip-card-back">
+                <div className="flip-back-top">
+                  <span className="flip-back-idx">/01</span>
+                  <span className="flip-back-tag">Cornwall, UK</span>
+                </div>
+                <div className="flip-back-content">
+                  <h3 className="flip-back-title">Landulph 400 kV Substation</h3>
+                  <span className="flip-back-scope-label">Lead Engineering: Civil, Structural &amp; Design Assurance</span>
+                  <p className="flip-back-desc">
+                    Landulph is a National Grid substation where works form part of the ongoing expansion of the transmission network, upgrading the grid to support the UK&apos;s shift to clean energy. PCD delivered the majority of the engineering works on the project, from civil engineering through to design assurance, reviewing design packages with site conditions in view to help keep the programme on track.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 02: Bulls Lodge 400 kV GIS */}
+          <div
+            className={`flip-card ${flippedCard === 2 ? 'is-flipped' : ''}`}
+            onClick={() => toggleFlip(2)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlip(2);
+              }
+            }}
+            tabIndex={0}
+            role="region"
+            aria-label="Bulls Lodge 400 kV GIS Substation project card"
+          >
+            <div className="flip-card-inner">
+              {/* FRONT */}
+              <div className="flip-card-front">
+                <div className="img">
+                  <img
+                    src="/img/p02.jpg"
+                    alt="Power transformer with bushings and cooling pipework"
+                    loading="lazy"
+                  />
+                  <span className="rep">Representative image</span>
+                </div>
+                <div className="pcard-front-body">
+                  <div className="pcard-front-top">
+                    <span className="pcard-idx">/02</span>
+                    <span className="pcard-loc">Essex, UK</span>
+                  </div>
+                  <div className="pcard-front-main">
+                    <h3 className="t-h4 pcard-front-title">Bulls Lodge 400 kV GIS Substation</h3>
+                    <span className="pcard-sector">Power &amp; Energy</span>
+                  </div>
+                  <div className="pcard-front-scope">
+                    <span className="pcard-scope-label">Scope</span>
+                    <p className="pcard-scope-text">Temporary Works</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="flip-card-back">
+                <div className="flip-back-top">
+                  <span className="flip-back-idx">/02</span>
+                  <span className="flip-back-tag">Essex, UK</span>
+                </div>
+                <div className="flip-back-content">
+                  <h3 className="flip-back-title">Bulls Lodge 400 kV GIS Substation</h3>
+                  <span className="flip-back-scope-label">Temporary Works</span>
+                  <p className="flip-back-desc">
+                    Bulls Lodge is a substation extension featuring a GIS building and non-SF6 switchgear, connecting new solar generation to the 400 kV network. PCD provided temporary works engineering for the project, supporting safe construction of the GIS buildings and foundations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 03: Navenby 400 kV */}
+          <div
+            className={`flip-card ${flippedCard === 3 ? 'is-flipped' : ''}`}
+            onClick={() => toggleFlip(3)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFlip(3);
+              }
+            }}
+            tabIndex={0}
+            role="region"
+            aria-label="Navenby 400 kV Substation project card"
+          >
+            <div className="flip-card-inner">
+              {/* FRONT */}
+              <div className="flip-card-front">
+                <div className="img">
+                  <img
+                    src="/img/p03.jpg"
+                    alt="Line of transmission towers crossing flat open farmland"
+                    loading="lazy"
+                  />
+                  <span className="rep">Representative image</span>
+                </div>
+                <div className="pcard-front-body">
+                  <div className="pcard-front-top">
+                    <span className="pcard-idx">/03</span>
+                    <span className="pcard-loc">Lincolnshire, UK</span>
+                  </div>
+                  <div className="pcard-front-main">
+                    <h3 className="t-h4 pcard-front-title">Navenby 400 kV Substation</h3>
+                    <span className="pcard-sector">Power &amp; Energy</span>
+                  </div>
+                  <div className="pcard-front-scope">
+                    <span className="pcard-scope-label">Scope</span>
+                    <p className="pcard-scope-text">Lead Engineering: Civil, Structural &amp; Design Assurance</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="flip-card-back">
+                <div className="flip-back-top">
+                  <span className="flip-back-idx">/03</span>
+                  <span className="flip-back-tag">Lincolnshire, UK</span>
+                </div>
+                <div className="flip-back-content">
+                  <h3 className="flip-back-title">Navenby 400 kV Substation</h3>
+                  <span className="flip-back-scope-label">Lead Engineering: Civil, Structural &amp; Design Assurance</span>
+                  <p className="flip-back-desc">
+                    This new open-air 400 kV substation will help meet growing demand and connect new sources of cleaner power, as part of The Great Grid Upgrade. The scheme includes new access, drainage and landscaping, plus overhead line works terminating on gantries inside the substation. PCD delivered the majority of the engineering works on the project, from civil engineering through to design assurance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ================= PROJECT PARTNERS ================= */}
       <section className="wrap pp-section" aria-label="Project partners">
         <div className="pp-header">
           <div>
-            <span className="dot-label">Project partners</span>
             <h2 className="t-h2 pp-heading">Built for complex<br />project teams.</h2>
           </div>
           <p className="pp-desc">
-            PCD works alongside contractors, engineers and project owners across major UK power and
-            infrastructure programmes.
+            PCD works alongside contractors, engineers and asset owners delivering UK substation programmes.
           </p>
         </div>
 
@@ -102,7 +341,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Construction<br />Companies</span>
-              <span className="pp-card-sub">Heavy Civil &amp; Site Works</span>
+              <span className="pp-card-sub">Substation Civils &amp; Site Works</span>
             </div>
           </div>
 
@@ -141,13 +380,13 @@ export default function HomePage() {
             <div className="pp-img-wrap">
               <img
                 src="/img/partner-05.jpg"
-                alt="Project Owners 400 kV high-voltage substation power transformer and infrastructure asset"
+                alt="Project Clients 400 kV high-voltage substation power transformer and infrastructure asset"
                 loading="lazy"
               />
             </div>
             <div className="pp-card-bottom">
-              <span className="pp-card-title">Project<br />Owners</span>
-              <span className="pp-card-sub">Utilities &amp; Asset Clients</span>
+              <span className="pp-card-title">Project<br />Clients</span>
+              <span className="pp-card-sub">Utilities &amp; Stakeholders</span>
             </div>
           </div>
         </div>
@@ -156,9 +395,9 @@ export default function HomePage() {
       {/* ================= POSITIONING & FACTS ================= */}
       <section className="wrap sec" aria-labelledby="h-pos">
         <div className="intro">
-          <div><span className="dot-label">Built around complex infrastructure</span></div>
+          <div></div>
           <div className="intro-right">
-            <h2 id="h-pos" className="t-h3">
+            <h2 id="h-pos" className="t-h2">
               Specialist engineering support <span className="grey">where technical decisions meet real project conditions.</span>
             </h2>
             <div className="intro-media">
@@ -171,7 +410,7 @@ export default function HomePage() {
               </div>
               <p className="t-body">
                 PCD supports major power and infrastructure projects with specialist engineering expertise
-                across civil, structural, assurance, temporary works and Protection &amp; Control requirements.
+                across civil, structural, Assurance, primary, Secondary and temporary works requirements.
               </p>
             </div>
           </div>
@@ -191,142 +430,25 @@ export default function HomePage() {
             <div>
               <div className="big">UK-wide</div>
               <p className="t-small" style={{ marginTop: '12px' }}>
-                Projects supported across the UK, from Cornwall to Lincolnshire.
+                Substation projects supported across the UK, from Cornwall to Lincolnshire.
               </p>
             </div>
           </div>
           <div className="card fact">
             <span className="idx">/03</span>
             <div>
-              <div className="big">4</div>
+              <div className="big">Design to Delivery</div>
               <p className="t-small" style={{ marginTop: '12px' }}>
-                Engineering disciplines: civil &amp; structural, design assurance, temporary works, Protection &amp; Control.
+                Civil, structural, primary, P&amp;C, and temporary works engineering.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= SELECTED PROJECTS ================= */}
-      <section className="wrap sec" aria-labelledby="h-work">
-        <div className="shead">
-          <span className="dot-label">Our work</span>
-          <h2 id="h-work" className="t-h2">Selected Projects</h2>
-          <div className="aside">
-            <button
-              className="circle light"
-              onClick={() => scrollRail('prev')}
-              aria-label="Previous projects"
-              disabled={!canScrollLeft}
-            >
-              <svg>
-                <use href="#chevl" />
-              </svg>
-            </button>
-            <button
-              className="circle"
-              onClick={() => scrollRail('next')}
-              aria-label="Next projects"
-              disabled={!canScrollRight}
-            >
-              <svg>
-                <use href="#chev" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <p className="t-body" style={{ margin: '-24px 0 32px' }}>
-          Experience across major power infrastructure. A selection of
-          projects demonstrating PCD&apos;s experience across complex substation and power infrastructure programmes.
-        </p>
-        <div className="rail" id="rail" ref={railRef} onScroll={handleRailScroll}>
-          <Link className="pcard zoom" href="/projects">
-            <div className="img">
-              <img
-                src="/img/p01.jpg"
-                alt="Outdoor high-voltage substation with gantries and transformers"
-                loading="lazy"
-              />
-              <span className="rep">Representative image</span>
-            </div>
-            <div className="pcard-body">
-              <span className="idx">/01</span>
-              <h3 className="t-h4">Landulph 400 kV Substation</h3>
-              <div className="pcard-meta"><span>Cornwall, UK</span><span>Power &amp; Energy</span></div>
-              <p className="scope">Civil Engineering and Design Assurance</p>
-            </div>
-          </Link>
-          <Link className="pcard zoom" href="/projects">
-            <div className="img">
-              <img
-                src="/img/p02.jpg"
-                alt="Power transformer with bushings and cooling pipework"
-                loading="lazy"
-              />
-              <span className="rep">Representative image</span>
-            </div>
-            <div className="pcard-body">
-              <span className="idx">/02</span>
-              <h3 className="t-h4">Bulls Lodge 400 kV GIS Substation</h3>
-              <div className="pcard-meta"><span>Essex, UK</span><span>Power &amp; Energy</span></div>
-              <p className="scope">GIS Buildings, Foundations and Structural Design Assurance</p>
-            </div>
-          </Link>
-          <Link className="pcard zoom" href="/projects">
-            <div className="img">
-              <img
-                src="/img/p03.jpg"
-                alt="Line of transmission towers crossing flat open farmland"
-                loading="lazy"
-              />
-              <span className="rep">Representative image</span>
-            </div>
-            <div className="pcard-body">
-              <span className="idx">/03</span>
-              <h3 className="t-h4">Navenby 400 kV Substation</h3>
-              <div className="pcard-meta"><span>Lincolnshire, UK</span><span>Power &amp; Energy</span></div>
-              <p className="scope">Civil Engineering and Design Assurance</p>
-            </div>
-          </Link>
-          <Link className="pcard zoom" href="/projects">
-            <div className="img">
-              <img
-                src="/img/p04.jpg"
-                alt="Close-up of substation insulators and bushings against blue sky"
-                loading="lazy"
-              />
-              <span className="rep">Representative image</span>
-            </div>
-            <div className="pcard-body">
-              <span className="idx">/04</span>
-              <h3 className="t-h4">Wymondley Substation</h3>
-              <div className="pcard-meta"><span>Hertfordshire, UK</span><span>Power &amp; Energy</span></div>
-              <p className="scope">GIS Substation Civil and Structural Engineering</p>
-            </div>
-          </Link>
-          <Link className="pcard zoom" href="/projects">
-            <div className="img">
-              <img
-                src="/img/p05.jpg"
-                alt="Black and white view of a substation compound"
-                loading="lazy"
-              />
-              <span className="rep">Representative image</span>
-            </div>
-            <div className="pcard-body">
-              <span className="idx">/05</span>
-              <h3 className="t-h4">LPT2 Substation Programme</h3>
-              <div className="pcard-meta"><span>London and Southeast England, UK</span><span>Power &amp; Energy</span></div>
-              <p className="scope">400/132 kV Substation Civil and Structural Engineering</p>
-            </div>
-          </Link>
-        </div>
-      </section>
-
       {/* ================= SERVICES ACCORDION ================= */}
       <section className="wrap sec" aria-labelledby="h-svc">
         <div className="shead">
-          <span className="dot-label">Services</span>
           <h2 id="h-svc" className="t-h2">Our Services</h2>
           <div className="aside">
             <Link className="pill" href="/services">
@@ -365,7 +487,7 @@ export default function HomePage() {
                 onClick={() => toggleAcc(0)}
               >
                 <span className="idx">/001</span>
-                <span className="t-h4">Civil &amp; Structural Engineering</span>
+                <span className="t-h4">Civil &amp; Structural</span>
                 <span className="pm" aria-hidden="true" />
               </button>
               <div className="acc-panel">
@@ -380,12 +502,11 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="t-body">
-                        PCD provides civil and structural engineering expertise for major infrastructure
-                        and substation projects.
+                        PCD delivers civil and structural engineering for new and extended substations, from early layouts to construction-ready designs. This covers foundations for transformers and HV plant, GIS and substation buildings, structures, cable trenches and drainage, with buildability considered from the start.
                       </p>
                       <ul className="chips">
-                        <li>Infrastructure</li>
                         <li>Substations</li>
+                        <li>Foundations</li>
                       </ul>
                     </div>
                   </div>
@@ -402,7 +523,7 @@ export default function HomePage() {
                 onClick={() => toggleAcc(1)}
               >
                 <span className="idx">/002</span>
-                <span className="t-h4">Civil Design Assurance</span>
+                <span className="t-h4">Design Assurance</span>
                 <span className="pm" aria-hidden="true" />
               </button>
               <div className="acc-panel">
@@ -417,8 +538,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="t-body">
-                        Technical design assurance focused on quality, constructability, coordination and
-                        project delivery.
+                        PCD provides independent technical review of substation design packages, checking they are safe, buildable and compliant before they reach site. We give clear, actionable comments and track them through to approval, keeping projects moving.
                       </p>
                       <ul className="chips">
                         <li>Quality</li>
@@ -441,7 +561,7 @@ export default function HomePage() {
                 onClick={() => toggleAcc(2)}
               >
                 <span className="idx">/003</span>
-                <span className="t-h4">Temporary Works</span>
+                <span className="t-h4">Primary Works</span>
                 <span className="pm" aria-hidden="true" />
               </button>
               <div className="acc-panel">
@@ -449,19 +569,18 @@ export default function HomePage() {
                   <div className="acc-content">
                     <div className="img">
                       <img
-                        src="/img/s03.jpg"
-                        alt="Scaffolding wrapped around a structure under construction"
+                        src="/img/p04.jpg"
+                        alt="Substation high-voltage insulators and busbars"
                         loading="lazy"
                       />
                     </div>
                     <div>
                       <p className="t-body">
-                        Engineering support for temporary works associated with complex construction and
-                        infrastructure projects.
+                        PCD supports the primary side of substation projects: the high-voltage plant that carries and switches power. We help ensure transformers, switchgear and busbars fit together safely with the substation layout and civil design.
                       </p>
                       <ul className="chips">
-                        <li>Construction</li>
-                        <li>Infrastructure</li>
+                        <li>HV plant</li>
+                        <li>Substations</li>
                       </ul>
                     </div>
                   </div>
@@ -478,7 +597,7 @@ export default function HomePage() {
                 onClick={() => toggleAcc(3)}
               >
                 <span className="idx">/004</span>
-                <span className="t-h4">Protection &amp; Control</span>
+                <span className="t-h4">Secondary Works (Protection &amp; Control)</span>
                 <span className="pm" aria-hidden="true" />
               </button>
               <div className="acc-panel">
@@ -493,12 +612,48 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="t-body">
-                        Specialist Protection &amp; Control support for substation and power
-                        infrastructure environments.
+                        PCD provides Protection &amp; Control engineering for substations, covering the systems that monitor, protect and control the network. Our secondary designs are clear, coordinated and ready for installation and commissioning.
                       </p>
                       <ul className="chips">
+                        <li>Protection</li>
+                        <li>Control</li>
                         <li>Substations</li>
-                        <li>Power infrastructure</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Item 005 */}
+            <div className={`acc-item ${openAcc === 4 ? 'open' : ''}`}>
+              <button
+                type="button"
+                className="acc-btn"
+                aria-expanded={openAcc === 4}
+                onClick={() => toggleAcc(4)}
+              >
+                <span className="idx">/005</span>
+                <span className="t-h4">Temporary Works</span>
+                <span className="pm" aria-hidden="true" />
+              </button>
+              <div className="acc-panel">
+                <div>
+                  <div className="acc-content">
+                    <div className="img">
+                      <img
+                        src="/img/s03.jpg"
+                        alt="Scaffolding wrapped around a structure under construction"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div>
+                      <p className="t-body">
+                        PCD designs the temporary works that allow substation and infrastructure projects to be built safely. From excavation support to crane platforms and temporary access, our solutions suit live sites, tight programmes and restricted access.
+                      </p>
+                      <ul className="chips">
+                        <li>Construction</li>
+                        <li>Substations</li>
                       </ul>
                     </div>
                   </div>
@@ -512,11 +667,9 @@ export default function HomePage() {
       {/* ================= HOW WE WORK ================= */}
       <section className="wrap sec" id="how-we-work" aria-labelledby="h-app">
         <div className="shead">
-          <span className="dot-label">How we work</span>
-          <h2 id="h-app" className="t-h3">
+          <h2 id="h-app" className="t-h2">
             A clear route from technical review <span className="grey">to project delivery.</span>
           </h2>
-          <div />
         </div>
         <div className="img app-img">
           <img
@@ -560,60 +713,56 @@ export default function HomePage() {
       {/* ================= WHY PCD ================= */}
       <section className="wrap sec" aria-labelledby="h-why">
         <div className="shead" style={{ alignItems: 'start' }}>
-          <span className="dot-label" style={{ paddingTop: '12px' }}>Why PCD</span>
           <div style={{ display: 'grid', gap: '20px' }}>
-            <h2 id="h-why" className="t-h3">
-              Engineering assurance that works <span className="grey">in the real world.</span>
+            <h2 id="h-why" className="t-h2">
+              Substation engineering that works <span className="grey">in the real world.</span>
             </h2>
             <p className="t-body" style={{ maxWidth: '60ch' }}>
-              Design assurance is more than checking whether a drawing looks right.
-              It is about understanding how design information interacts with access, sequencing, safety, construction and
-              the wider site.
+              Substations are complex, live and tightly programmed. PCD brings civil, structural, primary, secondary and temporary works expertise together, so design decisions hold up on site, not just on paper.
             </p>
           </div>
-          <div />
         </div>
         <div className="why-grid">
           <div className="card wcard" style={{ gridColumn: 'span 4' }}>
             <span className="idx">/01</span>
             <div>
-              <h3 className="t-h4">Site-aware engineering</h3>
+              <h3 className="t-h4">Power grid specialists</h3>
               <p className="t-small" style={{ marginTop: '8px' }}>
-                Understanding design in the context of real construction and site conditions.
+                Experience across the UK transmission network, from 400 kV and GIS substations to supergrid transformer (SGT) connections and grid reinforcement schemes.
               </p>
             </div>
           </div>
           <div className="card wcard" style={{ gridColumn: 'span 4' }}>
             <span className="idx">/02</span>
             <div>
-              <h3 className="t-h4">Actionable technical input</h3>
+              <h3 className="t-h4">Joined-up disciplines</h3>
               <p className="t-small" style={{ marginTop: '8px' }}>
-                Clear technical comments that help teams resolve issues and keep work moving.
+                Civil, structural, primary, secondary and temporary works coordinated under one team, with fewer gaps between packages and smoother project delivery.
               </p>
             </div>
           </div>
           <div className="icard" style={{ gridColumn: 'span 4' }}>
             <img
               src="/img/card2.jpg"
-              alt="Red steel formwork and rebar on a concrete construction site"
+              alt="Site-aware engineering on live high-voltage power substation"
               loading="lazy"
             />
             <div>
               <span className="idx">/03</span>
-              <h3 className="t-h4">Controlled revisions</h3>
-              <p>Structured coordination of comments, responses and design changes.</p>
+              <h3 className="t-h4">Site-aware engineering</h3>
+              <p>Designs that account for access, sequencing, outages and safety on live HV sites across the power grid.</p>
             </div>
           </div>
           <div className="icard" style={{ gridColumn: 'span 8' }}>
             <img
               src="/img/s01.jpg"
-              alt="Multi-storey structure enclosed in scaffolding"
+              alt="Clear route to approval for substation design packages"
               loading="lazy"
             />
             <div>
               <span className="idx">/04</span>
-              <h3 className="t-h4">Traceable decisions</h3>
-              <p>Clear technical decisions that support the route from submission to approval.</p>
+              <h3 className="t-h4">Clear route to approval</h3>
+              <p>Actionable comments and controlled revisions that keep grid projects moving through to sign-off without unnecessary delays.</p>
             </div>
           </div>
           <div className="icard" style={{ gridColumn: 'span 4' }}>
@@ -630,98 +779,96 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= CLIENT FEEDBACK ================= */}
-      <section className="wrap sec" aria-labelledby="h-fb">
-        <div className="shead">
-          <span className="dot-label">Client feedback</span>
-          <h2 id="h-fb" className="t-h2">Trusted on major infrastructure</h2>
-          <div className="aside">
-            <Link className="pill" href="/contact">
-              Discuss a Project{' '}
-              <svg>
-                <use href="#chev" />
-              </svg>
-            </Link>
-          </div>
+      {/* ================= TESTIMONIALS CAROUSEL ================= */}
+      <section className="wrap rev-section" aria-labelledby="h-reviews">
+        {/* Top Centered Header */}
+        <div className="rev-head-center">
+          <h2 id="h-reviews" className="t-h2 rev-top-title">
+            Client &amp; partner <span className="grey">testimonials.</span>
+          </h2>
         </div>
-        <div className="fb">
-          <div className="fb-side">
-            <div>
-              <span className="idx" style={{ color: 'var(--accent)' }}>/ Proven Track Record</span>
-              <h3
-                className="t-h3"
-                style={{
-                  marginTop: '14px',
-                  color: '#fff',
-                  fontSize: 'clamp(1.4rem, 2vw, 1.85rem)',
-                  lineHeight: 1.2,
-                }}
-              >
-                Engineered for quality, precision &amp; programme certainty.
-              </h3>
-              <p className="t-small" style={{ marginTop: '12px', color: '#A8A8A8', lineHeight: 1.6 }}>
-                PCD collaborates with Tier-1 contractors, EPC consortia, and infrastructure owners across high-voltage substation and power generation programmes.
-              </p>
+
+        {/* Split Carousel Section */}
+        <div className="rev-split-wrap">
+          {/* Left Column: Quote Icon, Heading, Navigation Controls */}
+          <div className="rev-left-col">
+            <div className="rev-quote-icon" aria-hidden="true">
+              <svg width="46" height="40" viewBox="0 0 512 512" fill="currentColor">
+                <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z" />
+              </svg>
             </div>
-            <div className="fb-side-stats">
-              <div>
-                <span className="fb-stat-num">
-                  400<span style={{ fontSize: '1rem', color: 'var(--accent)' }}>kV</span>
-                </span>
-                <p className="fb-stat-lbl">Substation &amp; GIS Engineering Experience</p>
+            <h3 className="rev-left-heading">
+              What our<br />partners say.
+            </h3>
+            <div className="rev-controls-row">
+              <button
+                type="button"
+                className="rev-arrow-btn"
+                onClick={prevReview}
+                aria-label="Previous testimonial"
+              >
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div className="rev-progress-track" aria-hidden="true">
+                <div
+                  className="rev-progress-bar"
+                  style={{
+                    width: `${74 / clientReviews.length}px`,
+                    left: `${(currentReview / (clientReviews.length - 1)) * (74 - 74 / clientReviews.length)}px`,
+                  }}
+                />
               </div>
-              <div>
-                <span className="fb-stat-num">
-                  100<span style={{ fontSize: '1rem', color: 'var(--accent)' }}>%</span>
-                </span>
-                <p className="fb-stat-lbl">Design Assurance Compliance Rate</p>
-              </div>
+              <button
+                type="button"
+                className="rev-arrow-btn"
+                onClick={nextReview}
+                aria-label="Next testimonial"
+              >
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
           </div>
 
-          <div className="fb-list">
-            <div className="fb-card">
-              <div>
-                <div className="fb-stars" aria-label="5 stars rating">
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
+          {/* Right Column: Interactive Carousel Loop Track */}
+          <div
+            className="rev-carousel-container"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            aria-live="polite"
+          >
+            <div
+              className="rev-carousel-track"
+              style={{
+                ['--current-idx' as any]: currentReview,
+              }}
+            >
+              {clientReviews.concat(clientReviews).map((rev, idx) => (
+                <div
+                  key={`${rev.id}-${idx}`}
+                  className="rev-card-item"
+                  aria-hidden={idx !== currentReview && idx !== (currentReview + 1) % clientReviews.length}
+                >
+                  <div className="rev-bubble">
+                    <p className="rev-quote-text">{rev.text}</p>
+                  </div>
+                  <div className="rev-author-row">
+                    <img
+                      src={rev.avatar}
+                      alt={rev.name}
+                      className="rev-avatar"
+                      loading="lazy"
+                    />
+                    <div className="rev-author-info">
+                      <strong className="rev-author-name">{rev.name}</strong>
+                      <span className="rev-author-role">{rev.role}</span>
+                    </div>
+                  </div>
                 </div>
-                <p className="fb-quote" style={{ marginTop: '16px' }}>
-                  &ldquo;PCD&apos;s design assurance and technical review were instrumental
-                  in keeping our 400 kV substation programme on schedule. Their practical understanding of
-                  constructability and site constraints prevented costly on-site revisions.&rdquo;
-                </p>
-              </div>
-              <div className="fb-author">
-                <strong className="fb-author-name">Principal Project Director</strong>
-                <span className="fb-author-role">Major UK Transmission &amp; Substation EPC Contractor</span>
-                <span className="fb-author-tag">Landulph 400 kV Substation Programme</span>
-              </div>
-            </div>
-
-            <div className="fb-card">
-              <div>
-                <div className="fb-stars" aria-label="5 stars rating">
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                  <svg><use href="#star" /></svg>
-                </div>
-                <p className="fb-quote" style={{ marginTop: '16px' }}>
-                  &ldquo;The depth of expertise in structural engineering, temporary
-                  works, and Protection &amp; Control that PCD brought to our team gave both our engineers and the client
-                  complete technical confidence.&rdquo;
-                </p>
-              </div>
-              <div className="fb-author">
-                <strong className="fb-author-name">Head of Civil Engineering</strong>
-                <span className="fb-author-role">National Energy Infrastructure Consortium</span>
-                <span className="fb-author-tag">Bulls Lodge GIS Substation</span>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -730,15 +877,13 @@ export default function HomePage() {
       {/* ================= FAQ ================= */}
       <section className="wrap sec" id="faq" aria-labelledby="h-faq">
         <div className="shead">
-          <span className="dot-label">FAQ</span>
           <h2 id="h-faq" className="t-h2">Questions</h2>
-          <div />
         </div>
         <div className="faq-grid">
           <div className="card ask">
             <div className="ask-badge">PCD</div>
             <div>
-              <p style={{ fontWeight: 600, letterSpacing: '-.03em' }}>Perpetual Civil Design</p>
+              <p style={{ fontWeight: 500, letterSpacing: '-.02em', color: 'var(--ink)' }}>Perpetual Civil Design</p>
               <p className="t-small">hr@civildesignltd.com</p>
             </div>
             <div>
@@ -825,7 +970,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="card cta-card">
-            <h2 id="h-cta" className="t-h4" style={{ fontSize: 'clamp(1.5rem, 2.2vw, 2rem)' }}>
+            <h2 id="h-cta" className="cta-card-title">
               Have a project that needs specialist engineering support?
             </h2>
             <p className="t-small">Talk to PCD about your next power, energy or infrastructure project.</p>

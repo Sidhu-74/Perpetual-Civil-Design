@@ -1,6 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceDisciplineCard from "@/components/ServiceDisciplineCard";
+import { serviceDisciplines } from "@/data/servicesData";
 
 export const metadata: Metadata = {
   title: "Services | Perpetual Civil Design Ltd",
@@ -11,10 +13,11 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main data-page="services">
+      {/* Hero Section */}
       <section className="hero" aria-labelledby="h-sp">
         <div className="hero-frame">
           <img
-            src="/img/svchero.jpg"
+            src="/img/s01.jpg"
             alt="Looking up through the lattice of a transmission tower"
             fetchPriority="high"
           />
@@ -33,111 +36,42 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="wrap sec">
+      {/* Section Header */}
+      <section className="wrap sec" style={{ paddingBottom: '0' }}>
         <div className="shead">
-          <span className="dot-label">Capabilities</span>
-          <h2 className="t-h2">Four disciplines</h2>
+          <div>
+            <h2 className="t-h2">Engineering Disciplines</h2>
+          </div>
           <div className="aside">
             <Link className="pill" href="/contact">
-              Discuss a Project{" "}
+              Discuss a Project{' '}
               <svg>
                 <use href="#chev" />
               </svg>
             </Link>
           </div>
         </div>
-
-        <div className="srow">
-          <div className="img zoom" style={{ gridColumn: "span 7", aspectRatio: "4/3" }}>
-            <img
-              src="/img/why.jpg"
-              alt="Steel building frame rising beside a tower crane"
-              loading="lazy"
-            />
-          </div>
-          <div className="card" style={{ gridColumn: "span 5" }}>
-            <span className="idx">/001</span>
-            <div>
-              <h3 className="t-h3">Civil &amp; Structural Engineering</h3>
-              <p className="t-body" style={{ marginTop: "14px" }}>
-                PCD provides civil and structural engineering expertise for major infrastructure and substation projects.
-              </p>
-              <ul className="chips">
-                <li>Infrastructure</li>
-                <li>Substations</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="srow">
-          <div className="card" style={{ gridColumn: "span 5" }}>
-            <span className="idx">/002</span>
-            <div>
-              <h3 className="t-h3">Civil Design Assurance</h3>
-              <p className="t-body" style={{ marginTop: "14px" }}>
-                Technical design assurance focused on quality, constructability, coordination and project delivery.
-              </p>
-              <ul className="chips">
-                <li>Quality</li>
-                <li>Constructability</li>
-                <li>Coordination</li>
-                <li>Delivery</li>
-              </ul>
-            </div>
-          </div>
-          <div className="img order-img" style={{ gridColumn: "span 7", aspectRatio: "4/3" }}>
-            <img
-              src="/img/s02.jpg"
-              alt="Engineering drawings laid out for review"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-        <div className="srow">
-          <div className="img" style={{ gridColumn: "span 7", aspectRatio: "4/3" }}>
-            <img
-              src="/img/s03.jpg"
-              alt="Scaffolding wrapped around a structure under construction"
-              loading="lazy"
-            />
-          </div>
-          <div className="card" style={{ gridColumn: "span 5" }}>
-            <span className="idx">/003</span>
-            <div>
-              <h3 className="t-h3">Temporary Works</h3>
-              <p className="t-body" style={{ marginTop: "14px" }}>
-                Engineering support for temporary works associated with complex construction and infrastructure projects.
-              </p>
-              <ul className="chips">
-                <li>Construction</li>
-                <li>Infrastructure</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="srow">
-          <div className="card" style={{ gridColumn: "span 5", background: "var(--ink)", color: "#fff" }}>
-            <span className="idx" style={{ color: "#8A8A8A" }}>/004</span>
-            <div>
-              <h3 className="t-h3">Protection &amp; Control</h3>
-              <p className="t-body" style={{ marginTop: "14px", color: "#A8A8A8" }}>
-                Specialist Protection &amp; Control support for substation and power infrastructure environments.
-              </p>
-            </div>
-          </div>
-          <div className="img order-img" style={{ gridColumn: "span 7", aspectRatio: "4/3" }}>
-            <img
-              src="/img/s04.jpg"
-              alt="Control room lined with electrical panels and instruments"
-              loading="lazy"
-            />
-          </div>
-        </div>
       </section>
 
+      {/* Tectra-Style Disciplines Content Layout with Expandable Subservices */}
+      <div className="svc-tectra-container">
+        {serviceDisciplines.map((discipline) => (
+          <ServiceDisciplineCard
+            key={discipline.id}
+            id={discipline.id}
+            index={discipline.index}
+            title={discipline.title}
+            lead={discipline.lead}
+            images={discipline.images}
+            capabilities={discipline.capabilities}
+            subservices={discipline.subservices}
+            ctaText={discipline.ctaText}
+            ctaHref={discipline.ctaHref}
+          />
+        ))}
+      </div>
+
+      {/* Bottom Call to Action Section */}
       <section className="wrap sec">
         <div className="cta-frame" style={{ minHeight: "clamp(420px,36vw,520px)" }}>
           <img
@@ -145,9 +79,25 @@ export default function ServicesPage() {
             alt="Transmission pylons and overhead lines against a muted evening sky"
             loading="lazy"
           />
-          <div></div>
+          <div className="card cta-contact-card">
+            <div className="cta-contact-tag">
+              <span className="cta-contact-dot" aria-hidden="true" />
+              <span>For Contact</span>
+            </div>
+            <div className="cta-contact-detail">
+              <svg className="cta-contact-icon" aria-hidden="true">
+                <use href="#mail" />
+              </svg>
+              <span>
+                <strong>Email :</strong>{' '}
+                <a href="mailto:hr@civildesignltd.com" className="cta-contact-link">
+                  hr@civildesignltd.com
+                </a>
+              </span>
+            </div>
+          </div>
           <div className="card cta-card">
-            <h2 className="t-h4" style={{ fontSize: "clamp(1.5rem,2.2vw,2rem)" }}>
+            <h2 className="cta-card-title">
               Discuss your next project with PCD.
             </h2>
             <Link className="pill" href="/contact" style={{ justifyContent: "center" }}>

@@ -23,7 +23,7 @@ export default function CookiePolicyPage() {
         <div style={{ marginBottom: '24px' }}>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-[#0B0B0B] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-600 hover:text-[#0B0B0B] transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M10 3L5 8l5 5" />
@@ -38,7 +38,7 @@ export default function CookiePolicyPage() {
           style={{
             background: '#FFFFFF',
             borderRadius: '20px',
-            border: '1px solid #E6E6E6',
+            border: '1px solid var(--line)',
             boxShadow: '0 4px 24px rgba(0,0,0,0.03)',
             padding: 'clamp(28px, 5vw, 64px)',
           }}
@@ -49,7 +49,7 @@ export default function CookiePolicyPage() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottom: '1px solid #E6E6E6',
+              borderBottom: '1px solid var(--line)',
               paddingBottom: '24px',
               marginBottom: '32px',
               flexWrap: 'wrap',
@@ -75,10 +75,7 @@ export default function CookiePolicyPage() {
                 alignItems: 'center',
                 gap: '8px',
                 fontSize: '0.8125rem',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                color: '#707070',
+                fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--muted)',
                 background: '#F2F2F2',
                 padding: '6px 14px',
                 borderRadius: '50px',
@@ -100,26 +97,20 @@ export default function CookiePolicyPage() {
           <div style={{ marginBottom: '32px' }}>
             <h1
               style={{
-                fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
-                lineHeight: 1.15,
-                color: '#0B0B0B',
+                fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)', fontWeight: 400, letterSpacing: '-0.035em', lineHeight: 1.14, color: 'var(--ink)',
                 marginBottom: '8px',
               }}
             >
               Cookie Policy
             </h1>
-            <p style={{ fontSize: '0.9375rem', color: '#707070', fontWeight: 500 }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--muted)', fontWeight: 400 }}>
               Last updated: 19 October 2026
             </p>
           </div>
 
           <div
             style={{
-              fontSize: '1rem',
-              lineHeight: 1.7,
-              color: '#3A3A3A',
+              fontSize: '1rem', lineHeight: 1.65, color: 'var(--ink-2)',
               display: 'flex',
               flexDirection: 'column',
               gap: '24px',
@@ -129,10 +120,7 @@ export default function CookiePolicyPage() {
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -151,7 +139,7 @@ export default function CookiePolicyPage() {
                 . It should be read together with our{' '}
                 <Link
                   href="/privacy-policy"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   Privacy Policy
                 </Link>
@@ -159,16 +147,13 @@ export default function CookiePolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* What are cookies? */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -179,16 +164,13 @@ export default function CookiePolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* How we use cookies */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -212,23 +194,20 @@ export default function CookiePolicyPage() {
                   borderRadius: '6px',
                   fontSize: '0.9375rem',
                   fontWeight: 500,
-                  color: '#0B0B0B',
+                  color: 'var(--ink)',
                 }}
               >
                 Because we do not use any non-essential cookies, our website does not currently show a cookie consent banner.
               </div>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Cookies used on this website */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -236,28 +215,28 @@ export default function CookiePolicyPage() {
               </h2>
 
               {/* Responsive Table */}
-              <div style={{ overflowX: 'auto', marginBottom: '16px', borderRadius: '12px', border: '1px solid #E6E6E6' }}>
+              <div style={{ overflowX: 'auto', marginBottom: '16px', borderRadius: '12px', border: '1px solid var(--line)' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9375rem' }}>
                   <thead>
-                    <tr style={{ background: '#0B0B0B', color: '#FFFFFF' }}>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '22%' }}>Type</th>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '25%' }}>Set by</th>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '33%' }}>Purpose</th>
-                      <th style={{ padding: '14px 18px', fontWeight: 600, width: '20%' }}>Duration</th>
+                    <tr style={{ background: 'var(--ink)', color: '#FFFFFF' }}>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '22%' }}>Type</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '25%' }}>Set by</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '33%' }}>Purpose</th>
+                      <th style={{ padding: '14px 18px', fontWeight: 500, width: '20%' }}>Duration</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr style={{ background: '#FFFFFF' }}>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: '#0B0B0B' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', fontWeight: 500, color: 'var(--ink)' }}>
                         Strictly necessary
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Our website host (GoDaddy)
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Delivering the website securely, balancing traffic and protecting the site against misuse
                       </td>
-                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: '#3A3A3A' }}>
+                      <td style={{ padding: '14px 18px', verticalAlign: 'top', color: 'var(--ink-2)' }}>
                         Session, or as set by the host
                       </td>
                     </tr>
@@ -270,16 +249,13 @@ export default function CookiePolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Managing cookies */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -293,16 +269,13 @@ export default function CookiePolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Changes to this policy */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -313,16 +286,13 @@ export default function CookiePolicyPage() {
               </p>
             </div>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #E6E6E6', margin: '8px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid var(--line)', margin: '8px 0' }} />
 
             {/* Contact us */}
             <div>
               <h2
                 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: '#0B0B0B',
-                  letterSpacing: '-0.02em',
+                  fontSize: 'clamp(1.18rem, 1.35vw, 1.28rem)', fontWeight: 500, color: 'var(--ink)', letterSpacing: '-0.025em',
                   marginBottom: '10px',
                 }}
               >
@@ -332,7 +302,7 @@ export default function CookiePolicyPage() {
                 If you have any questions about our use of cookies, please contact us at{' '}
                 <a
                   href="mailto:hr@civildesignltd.com"
-                  style={{ color: '#F26B1D', fontWeight: 600, textDecoration: 'underline' }}
+                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
                   hr@civildesignltd.com
                 </a>{' '}
