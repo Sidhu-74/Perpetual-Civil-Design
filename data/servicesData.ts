@@ -25,15 +25,15 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Foundations, buildings and structures engineered for the power grid.",
     images: [
       {
-        src: "/img/why.jpg",
+        src: "/img/engineering.jpeg",
         alt: "Steel building frame rising beside a tower crane",
       },
       {
-        src: "/img/p01.jpg",
+        src: "/img/landulph.jpg",
         alt: "Substation civil engineering and foundation layout",
       },
       {
-        src: "/img/card1.jpg",
+        src: "/img/infra.jpeg",
         alt: "Substation transformer bund and reinforced concrete base",
       },
     ],
@@ -82,7 +82,7 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Independent review that gets designs safely from submission to sign-off.",
     images: [
       {
-        src: "/img/s02.jpg",
+        src: "/img/civil.jpeg",
         alt: "Engineering drawings and schematics laid out for technical review",
       },
       {
@@ -90,7 +90,7 @@ export const serviceDisciplines: ServiceDiscipline[] = [
         alt: "Collaborative engineering design review meeting",
       },
       {
-        src: "/img/p02.jpg",
+        src: "/img/gis_sub.jpg",
         alt: "Bulls Lodge 400 kV GIS Substation design assurance review",
       },
     ],
