@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
               Website Privacy Policy
             </h1>
             <p style={{ fontSize: '0.875rem', color: 'var(--muted)', fontWeight: 400 }}>
-              Last updated: 19 October 2026
+              Last updated: Oct 12, 2026
             </p>
           </div>
 
@@ -127,16 +127,7 @@ export default function PrivacyPolicyPage() {
                 Who we are
               </h2>
               <p style={{ marginBottom: '12px' }}>
-                Perpetual Civil Design Limited (&quot;PCD&quot;, &quot;we&quot;, &quot;us&quot;) is a civil and structural engineering consultancy registered in England and Wales, company number 16070828, with its registered office at 18 Chestnut Way, Repton, Derby, DE65 6FQ. We are the controller of any personal data collected through{' '}
-                <a
-                  href="https://www.civildesignltd.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#F26B1D', textDecoration: 'underline' }}
-                >
-                  www.civildesignltd.com
-                </a>
-                .
+                Perpetual Civil Design Limited (&quot;PCD&quot;, &quot;we&quot;, &quot;us&quot;) is a civil and structural engineering consultancy registered in England and Wales, company number [number], with its registered office at 18 Chestnut Way, Repton, Derby, DE65 6FQ. We are the controller of any personal data collected through [website address].
               </p>
               <p>
                 Questions about this policy or your data can be sent to{' '}
@@ -301,20 +292,13 @@ export default function PrivacyPolicyPage() {
                 Sharing, storage and security
               </h2>
               <p style={{ marginBottom: '12px' }}>
-                We share information only with service providers who help us run the business, such as GoDaddy, which hosts our website and provides our email service. Enquiries submitted through our contact form are sent to{' '}
-                <a
-                  href="mailto:hr@civildesignltd.com"
-                  style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
-                >
-                  hr@civildesignltd.com
-                </a>
-                . Our service providers may process your information only on our instructions. We may also disclose information where the law requires it.
+                We share information only with service providers who help us run the business, such as our website host ([host name]), the provider that handles our enquiry form ([form provider]) and our email provider ([email provider]). They may process it only on our instructions. We may also disclose information where the law requires it.
               </p>
               <p style={{ marginBottom: '12px' }}>
                 Some providers may store data outside the UK. Where they do, we rely on safeguards approved under UK law, such as adequacy regulations or the International Data Transfer Agreement.
               </p>
               <p>
-                We keep enquiry emails for up to 2 years and client project records for 6 years after the project ends, to meet legal and insurance requirements. Server logs are kept by our host for a limited period in line with its own policies. We use reasonable technical and organisational measures to protect your information.
+                We keep enquiry emails for up to [2] years and client project records for [6] years after the project ends, to meet legal and insurance requirements. Server logs are kept by our host for [period]. We use reasonable technical and organisational measures to protect your information.
               </p>
             </div>
 
