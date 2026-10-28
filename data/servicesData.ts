@@ -133,15 +133,15 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "HV plant engineering for substations and SGT connections.",
     images: [
       {
-        src: "/img/p04.jpg",
+        src: "/img/prim1.jpeg",
         alt: "High-voltage substation insulators, switchgear and busbars",
       },
       {
-        src: "/img/hero.jpg",
+        src: "/img/projhero.jpg",
         alt: "Transmission pylon and overhead conductor arrangement",
       },
       {
-        src: "/img/projhero.jpg",
+        src: "/img/prim2.jpeg",
         alt: "Substation primary equipment and transformers",
       },
     ],
@@ -184,15 +184,15 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Protection and control systems that keep the grid safe and reliable.",
     images: [
       {
-        src: "/img/s04.jpg",
+        src: "/img/sec1.jpeg",
         alt: "Substation control room lined with electrical panels and protection relays",
       },
       {
-        src: "/img/p03.jpg",
+        src: "/img/scada.jpeg",
         alt: "Substation control panels and protection schematics",
       },
       {
-        src: "/img/position.jpg",
+        src: "/img/wiring.jpeg",
         alt: "Relay racks, marshalling cabinets and secondary wiring",
       },
     ],
@@ -241,15 +241,15 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Safe, practical temporary works for live grid infrastructure sites.",
     images: [
       {
-        src: "/img/s03.jpg",
+        src: "/img/excavation.jpeg",
         alt: "Scaffolding and falsework structure on construction site",
       },
       {
-        src: "/img/card2.jpg",
+        src: "/img/crane.jpeg",
         alt: "Excavation shoring and heavy machinery platform",
       },
       {
-        src: "/img/p05.jpg",
+        src: "/img/falsework.jpeg",
         alt: "Temporary access roads and heavy haulage working pads",
       },
     ],

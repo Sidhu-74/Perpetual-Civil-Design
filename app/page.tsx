@@ -262,7 +262,7 @@ export default function HomePage() {
               <div className="flip-card-front">
                 <div className="img">
                   <img
-                    src="/img/powerline.jpeg"
+                    src="/img/Powerline.jpeg"
                     alt="Line of transmission towers crossing flat open farmland"
                     loading="lazy"
                   />
@@ -395,11 +395,12 @@ export default function HomePage() {
       {/* ================= POSITIONING & FACTS ================= */}
       <section className="wrap sec" aria-labelledby="h-pos">
         <div className="intro">
-          <div></div>
-          <div className="intro-right">
+          <div>
             <h2 id="h-pos" className="t-h2">
               Specialist engineering support <span className="grey">where technical decisions meet real project conditions.</span>
             </h2>
+          </div>
+          <div className="intro-right">
             <div className="intro-media">
               <div className="img">
                 <img
@@ -703,7 +704,7 @@ export default function HomePage() {
           <li className="card step" style={{ background: 'var(--ink)', color: '#fff' }}>
             <div className="step-top"><span className="k">APPROVE</span><span className="idx" style={{ color: '#8A8A8A' }}>/04</span></div>
             <div>
-              <h3 className="t-h4">Progress to sign-off.</h3>
+              <h3 className="t-h4" style={{ color: '#FFFFFF' }}>Progress to sign-off.</h3>
               <p className="t-small" style={{ marginTop: '8px', color: '#A8A8A8' }}>A clear route through to client approval.</p>
             </div>
           </li>
@@ -724,19 +725,19 @@ export default function HomePage() {
         </div>
         <div className="why-grid">
           <div className="card wcard" style={{ gridColumn: 'span 4' }}>
-            <span className="idx">/01</span>
             <div>
+              <span className="idx">/01</span>
               <h3 className="t-h4">Power grid specialists</h3>
-              <p className="t-small" style={{ marginTop: '8px' }}>
+              <p className="t-small">
                 Experience across the UK transmission network, from 400 kV and GIS substations to supergrid transformer (SGT) connections and grid reinforcement schemes.
               </p>
             </div>
           </div>
           <div className="card wcard" style={{ gridColumn: 'span 4' }}>
-            <span className="idx">/02</span>
             <div>
+              <span className="idx">/02</span>
               <h3 className="t-h4">Joined-up disciplines</h3>
-              <p className="t-small" style={{ marginTop: '8px' }}>
+              <p className="t-small">
                 Civil, structural, primary, secondary and temporary works coordinated under one team, with fewer gaps between packages and smoother project delivery.
               </p>
             </div>
@@ -772,7 +773,8 @@ export default function HomePage() {
               loading="lazy"
             />
             <div>
-              <h3 className="t-h4">Built to work alongside complex project teams.</h3>
+              <span className="idx">/05</span>
+              <h3 className="t-h4">Built to work alongside complex project teams</h3>
               <p>PCD works both as a specialist subcontractor and directly with project owners.</p>
             </div>
           </div>
@@ -781,8 +783,8 @@ export default function HomePage() {
 
       {/* ================= TESTIMONIALS CAROUSEL ================= */}
       <section className="wrap rev-section" aria-labelledby="h-reviews">
-        {/* Top Centered Header */}
-        <div className="rev-head-center">
+        {/* Top Header */}
+        <div className="rev-head-left">
           <h2 id="h-reviews" className="t-h2 rev-top-title">
             Client &amp; partner <span className="grey">testimonials.</span>
           </h2>
