@@ -22,7 +22,7 @@ const allProjects: ProjectItem[] = [
     title: 'Landulph 400 kV Substation',
     location: 'Cornwall, UK',
     sector: 'Power & Energy',
-    img: '/img/p01.jpg',
+    img: '/img/landulph.jpg',
     alt: 'Landulph 400 kV Substation outdoor equipment and busbars',
     frontScope: 'Lead Engineering: Civil, Structural & Design Assurance',
     backDesc:
@@ -34,7 +34,7 @@ const allProjects: ProjectItem[] = [
     title: 'Navenby 400 kV Substation',
     location: 'Lincolnshire, UK',
     sector: 'Power & Energy',
-    img: '/img/p03.jpg',
+    img: '/img/Powerline.jpeg',
     alt: 'Navenby 400 kV Substation open-air plant and gantries',
     frontScope: 'Lead Engineering: Civil, Structural & Design Assurance',
     backDesc:
@@ -46,7 +46,7 @@ const allProjects: ProjectItem[] = [
     title: 'Bicker Fen Substation',
     location: 'Lincolnshire, UK',
     sector: 'Power & Energy',
-    img: '/img/card1.jpg',
+    img: '/img/routeie.png',
     alt: 'Bicker Fen Substation high-voltage interconnector bays',
     frontScope: '400 kV Substation Civil & Structural Engineering',
     backDesc:
@@ -58,7 +58,7 @@ const allProjects: ProjectItem[] = [
     title: 'West Burton Substation',
     location: 'Nottinghamshire, UK',
     sector: 'Power & Energy',
-    img: '/img/card2.jpg',
+    img: '/img/west.jpeg',
     alt: 'West Burton Substation 400 kV transmission infrastructure',
     frontScope: '400 kV Substation Civil Engineering & Foundations',
     backDesc:
@@ -70,7 +70,7 @@ const allProjects: ProjectItem[] = [
     title: 'Wymondley Substation',
     location: 'Hertfordshire, UK',
     sector: 'Power & Energy',
-    img: '/img/p04.jpg',
+    img: '/img/fen.jpeg',
     alt: 'Wymondley Substation 400 kV GIS equipment and transformer plinth',
     frontScope: '400 kV GIS Substation Civil & Structural Engineering',
     backDesc:
@@ -82,7 +82,7 @@ const allProjects: ProjectItem[] = [
     title: 'Bulls Lodge 400 kV GIS Substation',
     location: 'Essex, UK',
     sector: 'Power & Energy',
-    img: '/img/p02.jpg',
+    img: '/img/gis_sub.jpg',
     alt: 'Bulls Lodge 400 kV GIS Substation building and switchgear',
     frontScope: 'Temporary Works',
     backDesc:
@@ -94,7 +94,7 @@ const allProjects: ProjectItem[] = [
     title: 'Spennymoor Substation',
     location: 'County Durham, UK',
     sector: 'Power & Energy',
-    img: '/img/position.jpg',
+    img: '/img/dur.jpeg',
     alt: 'Spennymoor 400 kV Substation overhead lines and busbars',
     frontScope: '400 kV Substation Civil & Structural Engineering',
     backDesc:
@@ -106,7 +106,7 @@ const allProjects: ProjectItem[] = [
     title: 'Cowley 400 kV Bay Extension',
     location: 'Oxfordshire, UK',
     sector: 'Power & Energy',
-    img: '/img/p05.jpg',
+    img: '/img/ox.jpeg',
     alt: 'Cowley 400 kV Bay Extension steel gantries and supports',
     frontScope: 'Substation Bay Extension & Structural Engineering',
     backDesc:
@@ -118,7 +118,7 @@ const allProjects: ProjectItem[] = [
     title: 'Burwell Substation',
     location: 'Cambridgeshire, UK',
     sector: 'Power & Energy',
-    img: '/img/s01.jpg',
+    img: '/img/burwell.jpeg',
     alt: 'Burwell 400/132 kV Substation network stability equipment',
     frontScope: '400/132 kV Substation Civil Engineering & Technical Assurance',
     backDesc:
@@ -130,7 +130,7 @@ const allProjects: ProjectItem[] = [
     title: 'Wimbledon (LPT2)',
     location: 'London, UK',
     sector: 'Power & Energy (LPT2)',
-    img: '/img/s03.jpg',
+    img: '/img/wim.jpeg',
     alt: 'Wimbledon Substation London Power Tunnels shaft and headhouse',
     frontScope: '400 kV Substation Civil Engineering & Shaft Foundations',
     backDesc:
@@ -142,7 +142,7 @@ const allProjects: ProjectItem[] = [
     title: 'New Cross (LPT2)',
     location: 'London, UK',
     sector: 'Power & Energy (LPT2)',
-    img: '/img/s02.jpg',
+    img: '/img/new.jpeg',
     alt: 'New Cross Substation deep tunnel shaft construction',
     frontScope: '400 kV Substation Civil & Structural Engineering',
     backDesc:
@@ -178,7 +178,7 @@ const allProjects: ProjectItem[] = [
     title: 'Minety Substation',
     location: 'Wiltshire, UK',
     sector: 'Power & Energy',
-    img: '/img/why.jpg',
+    img: '/img/construction.jpeg',
     alt: 'Minety Battery Energy Storage and Supergrid Transformers',
     frontScope: 'Battery Energy Storage & Substation Civil Engineering',
     backDesc:
@@ -190,7 +190,7 @@ const allProjects: ProjectItem[] = [
     title: 'Mannington Substation',
     location: 'Dorset, UK',
     sector: 'Power & Energy',
-    img: '/img/approach.jpg',
+    img: '/img/engineering.jpeg',
     alt: 'Mannington 400/132 kV Substation and transmission network',
     frontScope: '400/132 kV Substation Civil & Structural Engineering',
     backDesc:
