@@ -146,7 +146,7 @@ export default function HomePage() {
               <div className="flip-card-front">
                 <div className="img">
                   <img
-                    src="/img/p01.jpg"
+                    src="/img/landulph.jpg"
                     alt="Outdoor high-voltage substation with gantries and transformers"
                     loading="lazy"
                   />
@@ -204,7 +204,7 @@ export default function HomePage() {
               <div className="flip-card-front">
                 <div className="img">
                   <img
-                    src="/img/p02.jpg"
+                    src="/img/gis_sub.jpg"
                     alt="Power transformer with bushings and cooling pipework"
                     loading="lazy"
                   />
@@ -262,7 +262,7 @@ export default function HomePage() {
               <div className="flip-card-front">
                 <div className="img">
                   <img
-                    src="/img/p03.jpg"
+                    src="/img/powerline.jpeg"
                     alt="Line of transmission towers crossing flat open farmland"
                     loading="lazy"
                   />
@@ -319,7 +319,7 @@ export default function HomePage() {
             <span className="pp-idx">01</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/partner-01.jpg"
+                src="/img/contract.jpeg"
                 alt="Main Contractors reinforced concrete foundation rebar and earthworks on UK infrastructure site"
                 loading="lazy"
               />
@@ -334,7 +334,7 @@ export default function HomePage() {
             <span className="pp-idx">02</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/partner-02.jpg"
+                src="/img/construction.jpeg"
                 alt="Construction Companies crane and structural steel building framework on infrastructure site"
                 loading="lazy"
               />
@@ -349,7 +349,7 @@ export default function HomePage() {
             <span className="pp-idx">03</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/partner-03.jpg"
+                src="/img/infra.jpeg"
                 alt="Infrastructure Companies high-voltage 400 kV substation and electrical power grid"
                 loading="lazy"
               />
@@ -364,7 +364,7 @@ export default function HomePage() {
             <span className="pp-idx">04</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/partner-04.jpg"
+                src="/img/engineering.jpeg"
                 alt="Engineering Companies Protection and Control substation relay room and switchgear panels"
                 loading="lazy"
               />
@@ -379,7 +379,7 @@ export default function HomePage() {
             <span className="pp-idx">05</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/partner-05.jpg"
+                src="/img/clients.jpeg"
                 alt="Project Clients 400 kV high-voltage substation power transformer and infrastructure asset"
                 loading="lazy"
               />
@@ -495,7 +495,7 @@ export default function HomePage() {
                   <div className="acc-content">
                     <div className="img">
                       <img
-                        src="/img/why.jpg"
+                        src="/img/civil.jpeg"
                         alt="Steel building frame rising beside a tower crane"
                         loading="lazy"
                       />
@@ -743,7 +743,7 @@ export default function HomePage() {
           </div>
           <div className="icard" style={{ gridColumn: 'span 4' }}>
             <img
-              src="/img/card2.jpg"
+              src="/img/site.jpeg"
               alt="Site-aware engineering on live high-voltage power substation"
               loading="lazy"
             />
@@ -755,7 +755,7 @@ export default function HomePage() {
           </div>
           <div className="icard" style={{ gridColumn: 'span 8' }}>
             <img
-              src="/img/s01.jpg"
+              src="/img/routeie.png"
               alt="Clear route to approval for substation design packages"
               loading="lazy"
             />
@@ -767,7 +767,7 @@ export default function HomePage() {
           </div>
           <div className="icard" style={{ gridColumn: 'span 4' }}>
             <img
-              src="/img/card1.jpg"
+              src="/img/together.jpeg"
               alt="Steel roof trusses lit by low sun"
               loading="lazy"
             />
