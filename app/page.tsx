@@ -262,7 +262,7 @@ export default function HomePage() {
               <div className="flip-card-front">
                 <div className="img">
                   <img
-                    src="/img/powerline.jpeg"
+                    src="/img/Powerline.jpeg"
                     alt="Line of transmission towers crossing flat open farmland"
                     loading="lazy"
                   />
