@@ -251,7 +251,7 @@ This message was submitted via the Perpetual Civil Design website (www.civildesi
       return NextResponse.json(
         {
           success: false,
-          error: error.message || 'Email delivery failed. Please reach out to Info@civildesignltd.com directly.',
+          error: 'Unable to deliver message at this time. Please contact us directly at Info@civildesignltd.com.',
         },
         { status: 500 }
       );

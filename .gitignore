@@ -12,6 +12,16 @@ scratch/
 .open-next/
 .wrangler/
 .dev.vars
+.dev.vars.*
 !.dev.vars.example
+
+# Secrets & Certificates
+*.pem
+*.key
+*.cert
+*.crt
+
+# System & Editor
 .DS_Store
 Thumbs.db
+*.log
