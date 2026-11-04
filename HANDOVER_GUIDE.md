@@ -17,10 +17,10 @@ Thank you for your feedback! I'm thrilled to hear that you're pleased with how t
 
 I have completed all the required updates to the codebase and policies, and I'm happy to clarify each of the points you raised:
 
-1. Hosting Recommendation (GoDaddy vs Vercel):
-   • We strongly recommend hosting the website application on Vercel while keeping your domain registration on GoDaddy.
-   • Why Vercel? Because the website is built with Next.js (the modern React framework maintained by Vercel), Vercel provides high-speed global CDN delivery, automated SSL certificates, bank-grade DDoS protection, and zero maintenance overhead.
-   • How it works: You keep your domain on GoDaddy and simply add two standard DNS records (an A record and a CNAME) pointing to Vercel. This gives you enterprise performance without having to transfer the domain away from GoDaddy.
+1. Hosting Recommendation (GoDaddy vs Cloudflare):
+   • We strongly recommend hosting the website application on Cloudflare while keeping your domain registration on GoDaddy.
+   • Why Cloudflare? Cloudflare provides global edge CDN delivery across 300+ cities, automated SSL certificates, bank-grade DDoS protection, and zero maintenance overhead.
+   • How it works: You keep your domain on GoDaddy and simply add two standard DNS records (an A record and a CNAME) pointing to Cloudflare. This gives you enterprise performance without having to transfer the domain away from GoDaddy.
 
 2. Essential Cookies Only & Zero Analytics:
    • Confirmed. The website uses strictly essential cookies only (namely, a lightweight token to remember your cookie notice dismissal preference and security session tokens for the contact form).
@@ -43,10 +43,9 @@ I have completed all the required updates to the codebase and policies, and I'm 
    • Create a company GitHub account or organization (e.g., github.com/civildesignltd) at https://github.com/join (Free).
    • I will immediately transfer repository ownership of the source code directly to your company account.
 
-   Step B: Vercel (Hosting)
-   • Sign up for a free Vercel account at https://vercel.com using a PCD company email address (e.g., Info@civildesignltd.com).
-   • Vercel's Hobby tier is 100% free with unlimited traffic for standard corporate websites. If you ever require enterprise multi-seat access, Vercel Pro is just $20/month per team seat.
-   • Once signed in, you can connect the GitHub repository with one click.
+   Step B: Cloudflare (Hosting)
+   • Sign up for a free Cloudflare account at https://dash.cloudflare.com using a PCD company email address (e.g., Info@civildesignltd.com).
+   • Connect your GitHub repository to Cloudflare Pages/Workers for automated Git-based builds and free zero-config deployment.
 
    Step C: GoDaddy (Domain DNS)
    • In your GoDaddy DNS Management panel for civildesignltd.com:
@@ -110,14 +109,14 @@ Samrich
 
 ## 3. GoDaddy DNS Configuration for www.civildesignltd.com
 
-When launching on Vercel with GoDaddy:
+When launching on Cloudflare with GoDaddy:
 
 | Type | Name / Host | Value / Target | TTL |
 | :--- | :--- | :--- | :--- |
-| **A** | `@` | `76.76.21.21` | 600 seconds (or 1/2 hour) |
-| **CNAME** | `www` | `cname.vercel-dns.com` | 600 seconds (or 1/2 hour) |
+| **CNAME** | www | perpetual-civil-design.pages.dev (or assigned Cloudflare domain) | Automatic |
+| **CNAME / Alias** | @ | Root domain redirection via Cloudflare DNS | Automatic |
 
-Once saved in GoDaddy, Vercel will automatically verify the domain, issue a free Let's Encrypt SSL certificate, and redirect HTTP to HTTPS.
+Alternatively, switch nameservers in GoDaddy to Cloudflare for full edge caching, free SSL, and DDoS mitigation.
 
 ---
 
@@ -126,7 +125,7 @@ Once saved in GoDaddy, Vercel will automatically verify the domain, issue a free
 | Service | Recommended Provider | Monthly Cost | Annual Cost |
 | :--- | :--- | :--- | :--- |
 | **Domain Registration** | GoDaddy (existing) | Existing renewal | Existing renewal |
-| **Web Hosting** | Vercel (Hobby Tier) | **£0 / month** | **£0 / year** |
+| **Web Hosting** | Cloudflare (Free Tier) | **£0 / month** | **£0 / year** |
 | **Email API (Contact Form)** | Resend (Free Tier - 3,000 emails/mo) | **£0 / month** | **£0 / year** |
 | **Code Repository** | GitHub (Free Tier) | **£0 / month** | **£0 / year** |
 | **Total Ongoing Hosting Cost** | | **£0 / month** | **£0 / year** |
