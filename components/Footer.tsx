@@ -26,10 +26,10 @@ export default function Footer() {
                 <span className="fc-handwritten">Get in touch</span>
                 <div className="fc-social-icons">
                   <a
-                    href="mailto:hr@civildesignltd.com"
+                    href="mailto:Info@civildesignltd.com"
                     className="fc-soc-btn"
                     aria-label="Email PCD"
-                    title="hr@civildesignltd.com"
+                    title="Info@civildesignltd.com"
                   >
                     <svg>
                       <use href="#mail" />
@@ -71,7 +71,7 @@ export default function Footer() {
                 <span className="fc-col-title">Office &amp; Contact</span>
                 <ul className="fc-links">
                   <li>
-                    <a href="mailto:hr@civildesignltd.com">hr@civildesignltd.com</a>
+                    <a href="mailto:Info@civildesignltd.com">Info@civildesignltd.com</a>
                   </li>
                 </ul>
               </div>

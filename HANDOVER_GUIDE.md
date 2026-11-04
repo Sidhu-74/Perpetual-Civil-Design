@@ -28,7 +28,7 @@ I have completed all the required updates to the codebase and policies, and I'm 
    • The Cookie Policy page on the website has been updated to explicitly detail these exact cookies and confirm zero analytics tracking.
 
 3. Contact Form Delivery:
-   • Confirmed. All enquiries submitted through the website form are routed directly to hr@civildesignltd.com.
+   • Confirmed. All enquiries submitted through the website form are routed directly to Info@civildesignltd.com.
    • The form is protected with automated bot honeypots and rate limiting to prevent spam.
 
 4. Company Name & Trademark:
@@ -44,7 +44,7 @@ I have completed all the required updates to the codebase and policies, and I'm 
    • I will immediately transfer repository ownership of the source code directly to your company account.
 
    Step B: Vercel (Hosting)
-   • Sign up for a free Vercel account at https://vercel.com using a PCD company email address (e.g., hr@civildesignltd.com or info@civildesignltd.com).
+   • Sign up for a free Vercel account at https://vercel.com using a PCD company email address (e.g., Info@civildesignltd.com).
    • Vercel's Hobby tier is 100% free with unlimited traffic for standard corporate websites. If you ever require enterprise multi-seat access, Vercel Pro is just $20/month per team seat.
    • Once signed in, you can connect the GitHub repository with one click.
 
@@ -55,7 +55,7 @@ I have completed all the required updates to the codebase and policies, and I'm 
    • This connects www.civildesignltd.com seamlessly to your live website with free automatic SSL.
 
    Step D: Resend (Email Dispatch for Contact Form)
-   • Sign up for a free account at https://resend.com using hr@civildesignltd.com.
+   • Sign up for a free account at https://resend.com using Info@civildesignltd.com.
    • Their free tier includes 3,000 emails per month (100/day), which is more than sufficient and completely free of charge.
 
 6. Future Website Changes & Maintenance Handover:
@@ -91,7 +91,7 @@ Samrich
 
 ### Client Feedback & Requirements Fulfilled
 1. **Contact Form Routing**:
-   - Backend API endpoint `/api/contact` defaults destination to `hr@civildesignltd.com`.
+   - Backend API endpoint `/api/contact` defaults destination to `Info@civildesignltd.com`.
    - Bot honeypot and IP rate limiting included.
 2. **Essential-Only Cookies**:
    - Bottom floating `CookieBanner` explaining strictly essential cookies.

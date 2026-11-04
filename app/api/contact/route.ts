@@ -131,9 +131,9 @@ export async function POST(request: Request) {
       );
     }
 
-    // Default recipient explicitly hr@civildesignltd.com as required by client
+    // Default recipient explicitly Info@civildesignltd.com as required by client
     const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.CONTACT_TO_EMAIL || 'hr@civildesignltd.com';
+    const toEmail = process.env.CONTACT_TO_EMAIL || 'Info@civildesignltd.com';
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'Perpetual Civil Design <enquiries@civildesignltd.com>';
 
     const name = sanitizeInput(rawName);
@@ -243,7 +243,7 @@ This message was submitted via the Perpetual Civil Design website (www.civildesi
       return NextResponse.json(
         {
           success: false,
-          error: error.message || 'Email delivery failed. Please reach out to hr@civildesignltd.com directly.',
+          error: error.message || 'Email delivery failed. Please reach out to Info@civildesignltd.com directly.',
         },
         { status: 500 }
       );
@@ -259,7 +259,7 @@ This message was submitted via the Perpetual Civil Design website (www.civildesi
     return NextResponse.json(
       {
         success: false,
-        error: 'An unexpected server error occurred. Please contact us directly at hr@civildesignltd.com.',
+        error: 'An unexpected server error occurred. Please contact us directly at Info@civildesignltd.com.',
       },
       { status: 500 }
     );

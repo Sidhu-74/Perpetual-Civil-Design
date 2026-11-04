@@ -301,10 +301,10 @@ export default function CookiePolicyPage() {
               <p>
                 If you have any questions about our use of cookies, please contact us at{' '}
                 <a
-                  href="mailto:hr@civildesignltd.com"
+                  href="mailto:Info@civildesignltd.com"
                   style={{ color: '#F26B1D', fontWeight: 500, textDecoration: 'underline' }}
                 >
-                  hr@civildesignltd.com
+                  Info@civildesignltd.com
                 </a>{' '}
                 or write to us at Perpetual Civil Design Limited, 18 Chestnut Way, Repton, Derby, DE65 6FQ.
               </p>

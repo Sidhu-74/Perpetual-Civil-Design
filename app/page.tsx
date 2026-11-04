@@ -6,45 +6,39 @@ import Link from 'next/link';
 const clientReviews = [
   {
     id: 1,
-    name: 'Karan Patel',
-    role: 'Project Director · Major Transmission EPC',
-    avatar: '/img/rev-01.jpg',
+    identity: 'Project Consultant',
+    designation: 'Project Director · Civil Engineering',
     text: "PCD delivered civil and structural engineering for our GIS substation with buildability front and centre. Their site-aware reviews resolved interface clashes before construction, keeping our programme on track through to final sign-off.",
   },
   {
     id: 2,
-    name: 'Catherine Hughes',
-    role: 'Head of Engineering · National Power Alliance',
-    avatar: '/img/rev-02.jpg',
+    identity: 'Industry Professional',
+    designation: 'Head of Engineering',
     text: 'Finding specialist partners who understand primary HV plant layouts and secondary Protection and Control systems is rare. PCD integrated seamlessly alongside our team, resolving technical comments quickly and securing approvals without delays.',
   },
   {
     id: 3,
-    name: 'Peter Henderson',
-    role: 'Delivery Lead · Substation Infrastructure Consortium',
-    avatar: '/img/rev-03.jpg',
+    identity: 'Business Partner',
+    designation: 'Construction Project Manager',
     text: 'The temporary works engineering delivered for transformer crane platforms and deep excavation support was exceptional. PCD provided safe, pragmatic solutions specifically tailored to live substation site restrictions and tight grid outage windows.',
   },
   {
     id: 4,
-    name: 'David Vance',
-    role: 'Senior Technical Manager · Grid EPC Contractor',
-    avatar: '/img/rev-04.jpg',
-    text: 'PCD’s design assurance comments are actionable, rigorous and clear. Their thorough technical reviews helped our EPC consortium navigate complex asset owner standards smoothly, avoiding costly on-site revisions and keeping the programme moving.',
+    identity: 'Confidential Client',
+    designation: 'Senior Structural Engineer',
+    text: "PCD's design assurance comments are actionable, rigorous and clear. Their thorough technical reviews helped our EPC consortium navigate complex asset owner standards smoothly, avoiding costly on-site revisions and keeping the programme moving.",
   },
   {
     id: 5,
-    name: 'Sarah Lin',
-    role: 'Transmission Package Manager · Clean Energy Grid Alliance',
-    avatar: '/img/rev-05.jpg',
+    identity: 'Anonymous Client',
+    designation: 'Infrastructure Development Manager',
     text: 'PCD supported our transmission scheme across civil layouts, primary plant coordination and cable trench designs. Their engineers demonstrated consistent technical rigor, fast response times and dependable support through every phase of delivery.',
   },
   {
     id: 6,
-    name: 'Alistair Robertson',
-    role: 'Chief Construction Engineer · High-Voltage Projects',
-    avatar: '/img/rev-06.jpg',
-    text: 'From heavy transformer foundation checks to switchgear building interfaces, PCD’s practical understanding of construction sequencing made a demanding live substation project safe, compliant and straightforward to deliver within our allocated grid outage.',
+    identity: 'Confidential Client',
+    designation: 'Managing Director · Construction',
+    text: "From heavy transformer foundation checks to switchgear building interfaces, PCD's practical understanding of construction sequencing made a demanding live substation project safe, compliant and straightforward to deliver within our allocated grid outage.",
   },
 ];
 
@@ -858,15 +852,9 @@ export default function HomePage() {
                     <p className="rev-quote-text">{rev.text}</p>
                   </div>
                   <div className="rev-author-row">
-                    <img
-                      src={rev.avatar}
-                      alt={rev.name}
-                      className="rev-avatar"
-                      loading="lazy"
-                    />
                     <div className="rev-author-info">
-                      <strong className="rev-author-name">{rev.name}</strong>
-                      <span className="rev-author-role">{rev.role}</span>
+                      <strong className="rev-author-name">{rev.identity}</strong>
+                      <span className="rev-author-role">{rev.designation}</span>
                     </div>
                   </div>
                 </div>
@@ -886,7 +874,7 @@ export default function HomePage() {
             <div className="ask-badge">PCD</div>
             <div>
               <p style={{ fontWeight: 500, letterSpacing: '-.02em', color: 'var(--ink)' }}>Perpetual Civil Design</p>
-              <p className="t-small">hr@civildesignltd.com</p>
+              <p className="t-small">Info@civildesignltd.com</p>
             </div>
             <div>
               <Link className="pill" href="/contact">
@@ -939,7 +927,7 @@ export default function HomePage() {
             <details>
               <summary>How do I start a project enquiry?<span className="pm" aria-hidden="true" /></summary>
               <p className="ans">
-                Use the enquiry form on the Contact page, or email hr@civildesignltd.com.
+                Use the enquiry form on the Contact page, or email Info@civildesignltd.com.
               </p>
             </details>
           </div>
@@ -965,8 +953,8 @@ export default function HomePage() {
               </svg>
               <span>
                 <strong>Email :</strong>{' '}
-                <a href="mailto:hr@civildesignltd.com" className="cta-contact-link">
-                  hr@civildesignltd.com
+                <a href="mailto:Info@civildesignltd.com" className="cta-contact-link">
+                  Info@civildesignltd.com
                 </a>
               </span>
             </div>

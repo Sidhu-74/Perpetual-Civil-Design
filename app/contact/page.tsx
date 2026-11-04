@@ -54,13 +54,13 @@ export default function ContactPage() {
       } else {
         setNote({
           type: 'error',
-          text: data.error || 'Failed to send enquiry. Please try again or email hr@civildesignltd.com directly.',
+          text: data.error || 'Failed to send enquiry. Please try again or email Info@civildesignltd.com directly.',
         });
       }
     } catch {
       setNote({
         type: 'error',
-        text: 'Network error. Please check your connection or email hr@civildesignltd.com directly.',
+        text: 'Network error. Please check your connection or email Info@civildesignltd.com directly.',
       });
     } finally {
       setIsSubmitting(false);

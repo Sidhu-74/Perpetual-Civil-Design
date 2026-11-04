@@ -1548,7 +1548,8 @@
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      height: 280px;
+      min-height: 280px;
+      height: auto;
     }
 
     .rev-bubble {
@@ -1565,7 +1566,7 @@
       position: relative;
     }
 
-    /* Speech bubble downward beak pointing toward avatar */
+    /* Speech bubble downward beak pointing toward identity info */
     .rev-bubble::after {
       content: "";
       position: absolute;
@@ -1589,44 +1590,43 @@
 
     .rev-author-row {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 20px;
-      padding-left: 10px;
-      height: 48px;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 18px;
+      padding-left: 8px;
+      min-height: 54px;
+      height: auto;
       box-sizing: border-box;
-    }
-
-    .rev-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-      border: 2px solid #FFFFFF;
-      background: #F3F4F6;
-      flex-shrink: 0;
+      text-align: left;
     }
 
     .rev-author-info {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 5px;
       min-width: 0;
+      width: 100%;
+      text-align: left;
     }
 
     .rev-author-name {
-      font-size: .9375rem;
+      font-size: clamp(20px, 1.4vw, 22px);
       font-weight: 500;
       color: var(--ink);
       line-height: 1.25;
-      letter-spacing: -.01em;
+      letter-spacing: -.02em;
+      text-align: left;
+      overflow-wrap: break-word;
     }
 
     .rev-author-role {
-      font-size: .78125rem;
+      font-size: clamp(15px, 1.05vw, 16px);
+      font-weight: 400;
       color: var(--muted);
-      line-height: 1.35;
+      line-height: 1.4;
+      text-align: left;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     /* faq */

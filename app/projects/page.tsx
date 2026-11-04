@@ -412,8 +412,8 @@ export default function ProjectsPage() {
               </svg>
               <span>
                 <strong>Email :</strong>{' '}
-                <a href="mailto:hr@civildesignltd.com" className="cta-contact-link">
-                  hr@civildesignltd.com
+                <a href="mailto:Info@civildesignltd.com" className="cta-contact-link">
+                  Info@civildesignltd.com
                 </a>
               </span>
             </div>
