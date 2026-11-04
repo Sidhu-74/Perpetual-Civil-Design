@@ -1,0 +1,5 @@
+# Cloudflare Workers / Wrangler local environment variables template
+# Copy to .dev.vars for local testing with `npm run preview`
+RESEND_API_KEY=re_your_api_key_here
+CONTACT_TO_EMAIL=Info@civildesignltd.com
+CONTACT_FROM_EMAIL="Perpetual Civil Design <onboarding@resend.dev>"

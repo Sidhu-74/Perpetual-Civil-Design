@@ -2,6 +2,9 @@
   "name": "perpetual-civil-design",
   "version": "1.0.0",
   "description": "Perpetual Civil Design Website",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

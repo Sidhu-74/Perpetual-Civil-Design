@@ -58,7 +58,8 @@ export async function POST(request: Request) {
   try {
     const forwardedFor = request.headers.get('x-forwarded-for');
     const realIp = request.headers.get('x-real-ip');
-    const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : (realIp || 'unknown');
+    const cfIp = request.headers.get('cf-connecting-ip');
+    const clientIp = cfIp || (forwardedFor ? forwardedFor.split(',')[0].trim() : (realIp || 'unknown'));
 
     if (!checkRateLimit(clientIp)) {
       return NextResponse.json(
@@ -66,7 +67,14 @@ export async function POST(request: Request) {
           success: false,
           error: 'Too many submissions from this connection. Please wait 10 minutes before trying again.',
         },
-        { status: 429 }
+        {
+          status: 429,
+          headers: {
+            'Retry-After': '600',
+            'X-RateLimit-Limit': '5',
+            'X-RateLimit-Remaining': '0',
+          },
+        }
       );
     }
 
