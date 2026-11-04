@@ -1,9 +1,17 @@
 import type { Metadata, Viewport } from 'next';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import ScrollObserver from '@/components/ScrollObserver';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-manrope',
+});
 
 export const viewport: Viewport = {
   themeColor: '#0B0B0B',
@@ -57,16 +65,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+    <html lang="en" className={manrope.variable}>
+      <body className={manrope.className}>
         {/* Global SVG Symbol Sprites */}
         <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
           <symbol id="chev" viewBox="0 0 16 16">
