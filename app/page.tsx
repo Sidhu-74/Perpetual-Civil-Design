@@ -853,8 +853,7 @@ export default function HomePage() {
                   </div>
                   <div className="rev-author-row">
                     <div className="rev-author-info">
-                      <strong className="rev-author-name">{rev.identity}</strong>
-                      <span className="rev-author-role">{rev.designation}</span>
+                      <strong className="rev-author-name">{rev.designation}</strong>
                     </div>
                   </div>
                 </div>
