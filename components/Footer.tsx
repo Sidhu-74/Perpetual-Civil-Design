@@ -60,7 +60,7 @@ export default function Footer() {
                 <span className="fc-col-title">Capabilities</span>
                 <ul className="fc-links">
                   <li><Link href="/services#civil-structural">Civil &amp; Structural Engineering</Link></li>
-                  <li><Link href="/services#design-assurance">Civil Design Assurance</Link></li>
+                  <li><Link href="/services#design-assurance">LCDAE &amp; CDAE Design Assurance</Link></li>
                   <li><Link href="/services#temporary-works">Temporary Works</Link></li>
                   <li><Link href="/services#protection-control">Protection &amp; Control</Link></li>
                   <li><Link href="/projects">400 kV GIS Substations</Link></li>
@@ -72,6 +72,11 @@ export default function Footer() {
                 <ul className="fc-links">
                   <li>
                     <a href="mailto:Info@civildesignltd.com">Info@civildesignltd.com</a>
+                  </li>
+                  <li>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>
+                      East Midlands, Repton
+                    </span>
                   </li>
                 </ul>
               </div>

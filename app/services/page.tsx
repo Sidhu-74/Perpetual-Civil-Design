@@ -7,7 +7,7 @@ import { serviceDisciplines } from "@/data/servicesData";
 export const metadata: Metadata = {
   title: "Services | Perpetual Civil Design Ltd",
   description:
-    "Specialist engineering for complex infrastructure. PCD provides focused engineering support across civil, structural, assurance, temporary works and Protection & Control requirements.",
+    "Specialist engineering for National Grid infrastructure. PCD provides focused engineering support across civil, structural, assurance, temporary works and Protection & Control requirements.",
 };
 
 export default function ServicesPage() {
@@ -25,7 +25,7 @@ export default function ServicesPage() {
             <div className="hero-left-content">
               <span className="status">Our Services</span>
               <h1 id="h-sp" className="hero-display-title">
-                Specialist engineering for complex infrastructure.
+                Specialist engineering for National Grid infrastructure.
               </h1>
               <p className="hero-display-sub">
                 PCD provides focused engineering support across civil, structural,<br />assurance,

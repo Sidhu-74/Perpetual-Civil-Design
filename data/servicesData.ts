@@ -77,8 +77,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
   {
     id: "design-assurance",
     index: "/002",
-    title: "Design Assurance",
-    shortTitle: "Design Assurance",
+    title: "LCDAE & CDAE Design Assurance",
+    shortTitle: "LCDAE & CDAE Design Assurance",
     lead: "Independent review that gets designs safely from submission to sign-off.",
     images: [
       {

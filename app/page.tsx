@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="hero-frame hero-frame-center">
           <img
             src="/img/hero.jpg"
-            alt="Specialist engineering services - National Grid substations"
+            alt="Specialist engineering services for National Grid substations"
             fetchPriority="high"
             decoding="async"
             width={1024}
@@ -87,10 +87,10 @@ export default function HomePage() {
           />
           <div className="hero-center-content">
             <h1 id="h-hero" className="hero-center-title">
-              Specialist engineering services<br />National Grid substations
+              Specialist engineering services<br />for National Grid substations
             </h1>
             <p className="hero-center-sub">
-              Expertise in Civil, structural, primary and secondary (Protection &amp; Control) engineering<br />for 400 kV, GIS and 132 kV substation projects across the UK.
+              Expertise in Civil, structural, primary and secondary (Protection &amp; Control) engineering<br />for National Grid 400 kV, GIS and 132 kV substation projects across the UK.
             </p>
             <Link className="hero-center-cta" href="/contact">
               <span>Discuss a Project</span>
@@ -118,7 +118,7 @@ export default function HomePage() {
           </div>
         </div>
         <p className="t-body" style={{ margin: '-24px 0 32px' }}>
-          Substation experience across the UK. A selection of 400 kV, GIS and 400/132 kV substation projects delivered with major contractors and asset owners.
+          National Grid substation experience across the UK. A selection of 400 kV, GIS and 400/132 kV substation projects delivered with major contractors and asset owners.
         </p>
         <div className="projects-uniform-grid">
           {/* Card 01: Landulph 400 kV */}
@@ -301,10 +301,10 @@ export default function HomePage() {
       <section className="wrap pp-section" aria-label="Project partners">
         <div className="pp-header">
           <div>
-            <h2 className="t-h2 pp-heading">Built for complex<br />project teams.</h2>
+            <h2 className="t-h2 pp-heading">Built for National Grid<br />project teams.</h2>
           </div>
           <p className="pp-desc">
-            PCD works alongside contractors, engineers and asset owners delivering UK substation programmes.
+            PCD works alongside contractors, engineers and asset owners delivering National Grid substation programmes.
           </p>
         </div>
 
@@ -320,7 +320,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Main<br />Contractors</span>
-              <span className="pp-card-sub">Tier-1 &amp; EPC Delivery</span>
+              <span className="pp-card-sub">National Grid Tier-1 &amp; EPC Delivery</span>
             </div>
           </div>
 
@@ -335,7 +335,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Construction<br />Companies</span>
-              <span className="pp-card-sub">Substation Civils &amp; Site Works</span>
+              <span className="pp-card-sub">National Grid Substation Civils &amp; Site Works</span>
             </div>
           </div>
 
@@ -350,7 +350,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Infrastructure<br />Companies</span>
-              <span className="pp-card-sub">HV Transmission &amp; Grids</span>
+              <span className="pp-card-sub">National Grid HV Transmission</span>
             </div>
           </div>
 
@@ -365,7 +365,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Engineering<br />Companies</span>
-              <span className="pp-card-sub">Consultancies &amp; P&amp;C</span>
+              <span className="pp-card-sub">National Grid Consultancies &amp; P&amp;C</span>
             </div>
           </div>
 
@@ -380,7 +380,7 @@ export default function HomePage() {
             </div>
             <div className="pp-card-bottom">
               <span className="pp-card-title">Project<br />Clients</span>
-              <span className="pp-card-sub">Utilities &amp; Stakeholders</span>
+              <span className="pp-card-sub">National Grid &amp; Utilities</span>
             </div>
           </div>
         </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
         <div className="intro">
           <div>
             <h2 id="h-pos" className="t-h2">
-              Specialist engineering support <span className="grey">where technical decisions meet real project conditions.</span>
+              National Grid specialist engineering support <span className="grey">where technical decisions meet real project conditions.</span>
             </h2>
           </div>
           <div className="intro-right">
@@ -416,7 +416,7 @@ export default function HomePage() {
             <div>
               <div className="big">400 kV</div>
               <p className="t-small" style={{ marginTop: '12px' }}>
-                Substation project experience, including GIS substations and 400/132 kV programmes.
+                National Grid substation project experience, including GIS substations and 400/132 kV programmes.
               </p>
             </div>
           </div>
@@ -425,7 +425,7 @@ export default function HomePage() {
             <div>
               <div className="big">UK-wide</div>
               <p className="t-small" style={{ marginTop: '12px' }}>
-                Substation projects supported across the UK, from Cornwall to Lincolnshire.
+                National Grid substation projects supported across the UK, from Cornwall to Lincolnshire.
               </p>
             </div>
           </div>
@@ -518,7 +518,7 @@ export default function HomePage() {
                 onClick={() => toggleAcc(1)}
               >
                 <span className="idx">/002</span>
-                <span className="t-h4">Design Assurance</span>
+                <span className="t-h4">LCDAE &amp; CDAE Design Assurance</span>
                 <span className="pm" aria-hidden="true" />
               </button>
               <div className="acc-panel">
@@ -710,10 +710,10 @@ export default function HomePage() {
         <div className="shead" style={{ alignItems: 'start' }}>
           <div style={{ display: 'grid', gap: '20px' }}>
             <h2 id="h-why" className="t-h2">
-              Substation engineering that works <span className="grey">in the real world.</span>
+              National Grid substation engineering that works <span className="grey">in the real world.</span>
             </h2>
             <p className="t-body" style={{ maxWidth: '60ch' }}>
-              Substations are complex, live and tightly programmed. PCD brings civil, structural, primary, secondary and temporary works expertise together, so design decisions hold up on site, not just on paper.
+              National Grid substations are complex, live and tightly programmed. PCD brings civil, structural, primary, secondary and temporary works expertise together, so design decisions hold up on site, not just on paper.
             </p>
           </div>
         </div>
@@ -913,7 +913,7 @@ export default function HomePage() {
               <summary>Where does PCD work?<span className="pm" aria-hidden="true" /></summary>
               <p className="ans">
                 PCD supports projects across the UK. Selected projects are located in Cornwall, Essex,
-                Lincolnshire, Hertfordshire, and London and Southeast England.
+                Lincolnshire, Hertfordshire, London and Southeast England, and the East Midlands (Repton).
               </p>
             </details>
             <details>

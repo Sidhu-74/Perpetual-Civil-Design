@@ -84,7 +84,7 @@ export default function ContactPage() {
               </h1>
               <p className="cu-split-sub">
                 Speak with PCD about civil, structural and Protection &amp; Control engineering for
-                power and infrastructure projects across the UK.
+                power and infrastructure projects across the UK. Based in Repton, East Midlands, delivering nationwide.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ export default function ContactPage() {
                       <option value="Power infrastructure">Power infrastructure</option>
                       <option value="Substations &amp; GIS">Substations &amp; GIS</option>
                       <option value="Civil &amp; Structural">Civil &amp; Structural</option>
-                      <option value="Design Assurance">Design Assurance</option>
+                      <option value="LCDAE &amp; CDAE Design Assurance">LCDAE &amp; CDAE Design Assurance</option>
                       <option value="Temporary Works">Temporary Works</option>
                       <option value="Protection &amp; Control">Protection &amp; Control</option>
                       <option value="Other">Other</option>
