@@ -917,11 +917,9 @@ export default function HomePage() {
               </p>
             </details>
             <details>
-              <summary>How does the design assurance process work?<span className="pm" aria-hidden="true" /></summary>
+              <summary>How does the LCDAE and CDAE Design assurance process work?<span className="pm" aria-hidden="true" /></summary>
               <p className="ans">
-                The route runs in four stages: Receive, where the design package is submitted; Assure, a
-                technical review with site context in view; Resolve, where comments and revisions are tracked; and
-                Approve, progressing to client sign-off.
+                The route runs in four stages: Receive, where the design package is submitted and logged; Assure, an independent technical review against site constraints and client standards; Resolve, where comments and revisions are tracked to close-out; and Approve, progressing to client sign-off.
               </p>
             </details>
             <details>
