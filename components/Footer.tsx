@@ -77,7 +77,7 @@ export default function Footer() {
                 <span className="fc-col-title" style={{ marginTop: '1.25rem' }}>Location</span>
                 <ul className="fc-links">
                   <li>
-                    <span className="fc-static-text">
+                    <span style={{ fontSize: '0.9375rem', fontWeight: 500, color: 'var(--ink-2, #2D3139)' }}>
                       East Midlands, Repton
                     </span>
                   </li>
