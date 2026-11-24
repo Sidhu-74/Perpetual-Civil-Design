@@ -73,6 +73,9 @@ export default function Footer() {
                   <li>
                     <a href="mailto:Info@civildesignltd.com">Info@civildesignltd.com</a>
                   </li>
+                </ul>
+                <span className="fc-col-title" style={{ marginTop: '1.25rem' }}>Location</span>
+                <ul className="fc-links">
                   <li>
                     <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>
                       East Midlands, Repton
