@@ -328,8 +328,8 @@ export default function HomePage() {
             <span className="pp-idx">02</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/contract.jpeg"
-                alt="Substation reinforced concrete foundations, groundworks and cable trenches under construction"
+                src="/img/substation_cable_trenches.jpg"
+                alt="Substation reinforced concrete cable trenches and foundations under construction"
                 loading="lazy"
               />
             </div>
@@ -344,7 +344,7 @@ export default function HomePage() {
             <div className="pp-img-wrap">
               <img
                 src="/img/Powerline.jpeg"
-                alt="High-voltage transmission pylons, overhead lines and substation grid infrastructure"
+                alt="High-voltage transmission pylons and overhead lines connected to a substation"
                 loading="lazy"
               />
             </div>
@@ -398,8 +398,8 @@ export default function HomePage() {
             <div className="intro-media">
               <div className="img">
                 <img
-                  src="/img/landulph.jpg"
-                  alt="Substation drone view showing high-voltage gantries, transformers and switchyard compound"
+                  src="/img/substation_drone_aerial.jpg"
+                  alt="Substation aerial drone view showing high-voltage transformer bays, switchgear gantries and foundation plinths"
                   loading="lazy"
                 />
               </div>
@@ -490,8 +490,8 @@ export default function HomePage() {
                   <div className="acc-content">
                     <div className="img">
                       <img
-                        src="/img/landulph.jpg"
-                        alt="Substation civil engineering and foundation layout"
+                        src="/img/substation_transformer_bund.jpg"
+                        alt="Substation transformer foundations, civil bund walls and switchyard layout"
                         loading="lazy"
                       />
                     </div>
@@ -637,8 +637,8 @@ export default function HomePage() {
                   <div className="acc-content">
                     <div className="img">
                       <img
-                        src="/img/excavation.jpeg"
-                        alt="Substation temporary works excavation shoring and crane working platforms"
+                        src="/img/substation_temporary_works.jpg"
+                        alt="Substation temporary works sheet piling excavation shoring and crane working platforms"
                         loading="lazy"
                       />
                     </div>
@@ -668,8 +668,8 @@ export default function HomePage() {
         </div>
         <div className="img app-img">
           <img
-            src="/img/routeie.png"
-            alt="Substation technical layout plan drawing and engineering schematics"
+            src="/img/substation_plan_drawing.jpg"
+            alt="Substation technical layout plan drawing, CAD schematics and scale ruler on engineering worktable"
             loading="lazy"
           />
         </div>
@@ -750,8 +750,8 @@ export default function HomePage() {
           </div>
           <div className="icard" style={{ gridColumn: 'span 8' }}>
             <img
-              src="/img/gis_sub.jpg"
-              alt="Substation engineering and design assurance review on site"
+              src="/img/substation_plan_drawing.jpg"
+              alt="Substation technical plan drawings and design approval documentation"
               loading="lazy"
             />
             <div>

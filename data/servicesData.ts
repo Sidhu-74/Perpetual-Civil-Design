@@ -25,8 +25,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Foundations, buildings and structures engineered for the power grid.",
     images: [
       {
-        src: "/img/landulph.jpg",
-        alt: "Substation civil layout, foundation plinths and switchyard engineering",
+        src: "/img/substation_transformer_bund.jpg",
+        alt: "Substation transformer civil bund construction, foundations and switchyard engineering",
       },
       {
         src: "/img/landulph.jpg",
@@ -82,8 +82,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "LCDAE and CDAE design assurance across all disciplines, taking National Grid substation designs from submission to sign-off.",
     images: [
       {
-        src: "/img/routeie.png",
-        alt: "Substation design package review and technical drawings",
+        src: "/img/substation_plan_drawing.jpg",
+        alt: "Substation layout plan drawings and CAD design package review",
       },
       {
         src: "/img/s02.jpg",
@@ -188,8 +188,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
         alt: "Substation control room lined with electrical panels and protection relays",
       },
       {
-        src: "/img/s04.jpg",
-        alt: "Substation Protection & Control panels and relay room instruments",
+        src: "/img/substation_pc_relay_room.jpg",
+        alt: "Substation Protection & Control secondary relay cabinets and terminal cubicles",
       },
       {
         src: "/img/wiring.jpeg",
@@ -241,8 +241,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Safe, practical temporary works for live grid infrastructure sites.",
     images: [
       {
-        src: "/img/excavation.jpeg",
-        alt: "Scaffolding and falsework structure on construction site",
+        src: "/img/substation_temporary_works.jpg",
+        alt: "Substation sheet-piled excavation shoring with hydraulic props and crane platform",
       },
       {
         src: "/img/crane.jpeg",

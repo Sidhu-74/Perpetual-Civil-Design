@@ -46,7 +46,7 @@ const allProjects: ProjectItem[] = [
     title: 'Bicker Fen Substation',
     location: 'Lincolnshire, UK',
     sector: 'Power & Energy',
-    img: '/img/card1.jpg',
+    img: '/img/substation_transformer_bund.jpg',
     alt: 'Bicker Fen Substation high-voltage interconnector bays',
     frontScope: '400 kV Substation Civil & Structural Engineering',
     backDesc:
@@ -130,7 +130,7 @@ const allProjects: ProjectItem[] = [
     title: 'Wimbledon (LPT2)',
     location: 'London, UK',
     sector: 'Power & Energy (LPT2)',
-    img: '/img/s03.jpg',
+    img: '/img/substation_temporary_works.jpg',
     alt: 'Wimbledon Substation London Power Tunnels shaft and headhouse',
     frontScope: '400 kV Substation Civil Engineering & Shaft Foundations',
     backDesc:
@@ -142,7 +142,7 @@ const allProjects: ProjectItem[] = [
     title: 'New Cross (LPT2)',
     location: 'London, UK',
     sector: 'Power & Energy (LPT2)',
-    img: '/img/p05.jpg',
+    img: '/img/substation_cable_trenches.jpg',
     alt: 'New Cross Substation deep tunnel shaft construction',
     frontScope: '400 kV Substation Civil & Structural Engineering',
     backDesc:
@@ -178,7 +178,7 @@ const allProjects: ProjectItem[] = [
     title: 'Minety Substation',
     location: 'Wiltshire, UK',
     sector: 'Power & Energy',
-    img: '/img/why.jpg',
+    img: '/img/substation_drone_aerial.jpg',
     alt: 'Minety Battery Energy Storage and Supergrid Transformers',
     frontScope: 'Battery Energy Storage & Substation Civil Engineering',
     backDesc:
