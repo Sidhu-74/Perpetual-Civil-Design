@@ -533,13 +533,13 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="t-body">
-                        PCD provides independent technical review of substation design packages, checking they are safe, buildable and compliant before they reach site. We give clear, actionable comments and track them through to approval, keeping projects moving.
+                        PCD provides Lead Contractor Design Approval Engineer (LCDAE) and Contractor Design Approval Engineer (CDAE) services on National Grid substation projects. We review design packages across all disciplines, primary, secondary, civil and structural, against National Grid specifications. We check they are safe, buildable and compliant before they reach site, and track every comment through to approval.
                       </p>
                       <ul className="chips">
-                        <li>Quality</li>
-                        <li>Constructability</li>
-                        <li>Coordination</li>
-                        <li>Delivery</li>
+                        <li>National Grid Standards</li>
+                        <li>LCDAE Sign-off</li>
+                        <li>CDAE Review</li>
+                        <li>Comment Close-out</li>
                       </ul>
                     </div>
                   </div>
