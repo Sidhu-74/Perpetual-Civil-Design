@@ -17,8 +17,8 @@ export default function ServicesPage() {
       <section className="hero" aria-labelledby="h-sp">
         <div className="hero-frame">
           <img
-            src="/img/s01.jpg"
-            alt="Looking up through the lattice of a transmission tower"
+            src="/img/svchero.jpg"
+            alt="Looking up through the lattice of a high-voltage transmission tower at a substation"
             fetchPriority="high"
           />
           <div className="hero-inner">

@@ -25,8 +25,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "Foundations, buildings and structures engineered for the power grid.",
     images: [
       {
-        src: "/img/engineering.jpeg",
-        alt: "Steel building frame rising beside a tower crane",
+        src: "/img/landulph.jpg",
+        alt: "Substation civil layout, foundation plinths and switchyard engineering",
       },
       {
         src: "/img/landulph.jpg",
@@ -82,12 +82,12 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     lead: "LCDAE and CDAE design assurance across all disciplines, taking National Grid substation designs from submission to sign-off.",
     images: [
       {
-        src: "/img/civil.jpeg",
-        alt: "Engineering drawings and schematics laid out for technical review",
+        src: "/img/routeie.png",
+        alt: "Substation design package review and technical drawings",
       },
       {
-        src: "/img/approach.jpg",
-        alt: "Collaborative engineering design review meeting",
+        src: "/img/s02.jpg",
+        alt: "Substation engineering schematics and design assurance drawings",
       },
       {
         src: "/img/gis_sub.jpg",
@@ -188,8 +188,8 @@ export const serviceDisciplines: ServiceDiscipline[] = [
         alt: "Substation control room lined with electrical panels and protection relays",
       },
       {
-        src: "/img/scada.jpeg",
-        alt: "Substation control panels and protection schematics",
+        src: "/img/s04.jpg",
+        alt: "Substation Protection & Control panels and relay room instruments",
       },
       {
         src: "/img/wiring.jpeg",
