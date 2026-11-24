@@ -79,7 +79,7 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     index: "/002",
     title: "LCDAE & CDAE Design Assurance",
     shortTitle: "LCDAE & CDAE Design Assurance",
-    lead: "Independent review that gets designs safely from submission to sign-off.",
+    lead: "LCDAE and CDAE design assurance across all disciplines, taking National Grid substation designs from submission to sign-off.",
     images: [
       {
         src: "/img/civil.jpeg",
@@ -96,33 +96,33 @@ export const serviceDisciplines: ServiceDiscipline[] = [
     ],
     capabilities: [
       "Design Package Review",
-      "Standards & Specification Checks",
-      "Constructability Reviews",
+      "National Grid Standards & Specification Checks",
+      "Constructability & Interface Reviews",
       "Comment Tracking & Close-out",
     ],
     subservices: [
       {
         title: "Design Package Review",
         description:
-          "PCD carries out independent technical reviews of civil and structural design packages before they reach site. We check calculations, drawings and specifications for accuracy, safety and completeness. Issues are caught early, when they are quicker and cheaper to resolve.",
+          "As LCDAE and CDAE on National Grid substation projects, PCD reviews design packages across all disciplines: civil and structural, primary (HV plant), secondary (protection and control) and temporary works. We check calculations, drawings and specifications for accuracy, safety and completeness. Issues are caught early, when they are quicker and cheaper to resolve.",
       },
       {
-        title: "Standards & Specification Checks",
+        title: "National Grid Standards & Specification Checks",
         description:
-          "We check that designs meet client standards, technical specifications and UK regulations. Our engineers understand the requirements of major grid and infrastructure owners. This gives clients confidence that designs will pass approval first time wherever possible.",
+          "We check every discipline's design against National Grid technical specifications, client standards and UK regulations. Our engineers know National Grid's design assurance and approval process, so designs have the best chance of passing approval first time.",
       },
       {
-        title: "Constructability Reviews",
+        title: "Constructability & Interface Reviews",
         description:
-          "Our reviews look at how a design will actually be built, not just whether it looks right on paper. We consider access, sequencing, outages and safety on live sites. This helps prevent costly redesigns and delays once work starts.",
+          "We look at how a design will actually be built on a live National Grid substation, not just whether it looks right on paper. We check access, sequencing, outages and safety, and make sure civil, primary, secondary and temporary works designs fit together. This helps prevent costly redesigns and delays once work starts.",
       },
       {
         title: "Comment Tracking & Close-out",
         description:
-          "PCD provides clear, actionable comments and tracks every one through each design revision. Responses and changes are recorded so decisions are fully traceable. We stay involved until every item is closed out and the design is signed off.",
+          "PCD gives clear, actionable comments and tracks every one through each design revision, across all disciplines. Responses and changes are recorded so decisions are fully traceable for National Grid approval. We stay involved until every item is closed out and the design is signed off.",
       },
     ],
-    ctaText: "Discuss Design Assurance",
+    ctaText: "Discuss LCDAE / CDAE Support",
     ctaHref: "/contact",
   },
   {
