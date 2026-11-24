@@ -19,7 +19,7 @@ export default function Footer() {
 
             <div className="fc-blue-bottom">
               <p className="fc-blue-tagline">
-                Specialist civil, structural &amp; design assurance engineering for UK power and substation infrastructure.
+                Specialist engineering and design assurance for National Grid substation projects across the UK.
               </p>
 
               <div className="fc-social-row">
@@ -77,7 +77,7 @@ export default function Footer() {
                 <span className="fc-col-title" style={{ marginTop: '1.25rem' }}>Location</span>
                 <ul className="fc-links">
                   <li>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>
+                    <span className="fc-static-text">
                       East Midlands, Repton
                     </span>
                   </li>
