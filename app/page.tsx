@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="hero-frame hero-frame-center">
           <img
             src="/img/hero.jpg"
-            alt="Specialist engineering services for UK substations"
+            alt="Specialist engineering services - National Grid substations"
             fetchPriority="high"
             decoding="async"
             width={1024}
@@ -87,7 +87,7 @@ export default function HomePage() {
           />
           <div className="hero-center-content">
             <h1 id="h-hero" className="hero-center-title">
-              Specialist engineering services<br />for UK substations
+              Specialist engineering services<br />National Grid substations
             </h1>
             <p className="hero-center-sub">
               Expertise in Civil, structural, primary and secondary (Protection &amp; Control) engineering<br />for 400 kV, GIS and 132 kV substation projects across the UK.
