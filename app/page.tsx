@@ -328,8 +328,8 @@ export default function HomePage() {
             <span className="pp-idx">02</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/construction.jpeg"
-                alt="Construction Companies crane and structural steel building framework on infrastructure site"
+                src="/img/partner-02.jpg"
+                alt="Construction Companies substation civil engineering and structural framework"
                 loading="lazy"
               />
             </div>
@@ -343,8 +343,8 @@ export default function HomePage() {
             <span className="pp-idx">03</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/infra.jpeg"
-                alt="Infrastructure Companies high-voltage 400 kV substation and electrical power grid"
+                src="/img/partner-03.jpg"
+                alt="Infrastructure Companies high-voltage substation transmission and busbar infrastructure"
                 loading="lazy"
               />
             </div>
@@ -358,8 +358,8 @@ export default function HomePage() {
             <span className="pp-idx">04</span>
             <div className="pp-img-wrap">
               <img
-                src="/img/engineering.jpeg"
-                alt="Engineering Companies Protection and Control substation relay room and switchgear panels"
+                src="/img/partner-04.jpg"
+                alt="Engineering Companies substation electrical engineering and Protection & Control relay room"
                 loading="lazy"
               />
             </div>
